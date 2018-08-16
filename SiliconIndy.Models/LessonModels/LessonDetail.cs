@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SiliconIndy.Models.CommentModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,8 @@ namespace SiliconIndy.Models.LessonModels
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }
+
+        public virtual ICollection<CommentListItem> Comments { get; set; } = new List<CommentListItem>();
 
         public override string ToString() => $"[{LessonId}] {Title}";
     }
