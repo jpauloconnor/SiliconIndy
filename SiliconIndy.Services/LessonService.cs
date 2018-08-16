@@ -36,12 +36,8 @@ namespace SiliconIndy.Services
             }
         }
 
-        public bool DeleteLesson(int lessonId)
-        {
-            throw new NotImplementedException();
-        }
 
-        public IEnumerable<LessonListItem> GetLessons()
+        public ICollection<LessonListItem> GetLessons()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -64,18 +60,13 @@ namespace SiliconIndy.Services
             using (var ctx = new ApplicationDbContext())
             {
 
-                var lesson = GetLessonById(ctx, lessonId);
+                var lesson = GetLesson(ctx, lessonId);
                 var commentService = new CommentService(_ownerId, lessonId);
-
-                var entity =
-                    ctx
-                        .Lessons
-                        .Single(e => e.LessonId == lessonId && e.OwnerId == _ownerId);
 
                 return
                     new LessonDetail
                     {
-                        Title = entity.Title,
+                        Title = lesson.Title,
                         Comments = commentService.GetCommentsByLessonId(lessonId)
                     };
             }
@@ -86,7 +77,14 @@ namespace SiliconIndy.Services
             throw new NotImplementedException();
         }
 
-        private Lesson GetLessonById(ApplicationDbContext context, int lessonId)
+
+        public bool DeleteLesson(int lessonId)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        private Lesson GetLesson(ApplicationDbContext context, int lessonId)
         {
             using (context)
             {

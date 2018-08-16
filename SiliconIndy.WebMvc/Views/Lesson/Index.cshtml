@@ -6,40 +6,35 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.LessonId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
-        <th></th>
-    </tr>
+<div class="row">
+    <div class="container">
+        <div class="row display-section">
+            <div class="col-md-12">
+                <h1>All Lessons</h1>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.LessonId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedUtc)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+                <p>
+                    @Html.ActionLink("Create New", "Create")
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
-</table>
+<div class="row">
+    <div class="container">
+        <row>
+            <div class="col-md-12">
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                        <li class="product-list">
+                            <h2>
+                                @Html.ActionLink(item.Title, "Details", new { id = item.LessonId })
+                            </h2>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </row>
+    </div>
+</div>

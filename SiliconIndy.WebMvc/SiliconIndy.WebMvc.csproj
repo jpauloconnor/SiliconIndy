@@ -270,10 +270,10 @@
     <Content Include="Views\Lesson\Index.cshtml" />
     <Content Include="Views\Lesson\Create.cshtml" />
     <Content Include="Views\Lesson\Details.cshtml" />
+    <Content Include="Views\Comment\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Comment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
