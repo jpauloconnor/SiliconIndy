@@ -29,7 +29,7 @@ namespace SiliconIndy.Services
                     CreatedUtc = DateTimeOffset.Now,
                 };
 
-            using(var context = new ApplicationDbContext())
+            using (var context = new ApplicationDbContext())
             {
                 context.Lessons.Add(entity);
                 return context.SaveChanges() == 1;
@@ -37,11 +37,6 @@ namespace SiliconIndy.Services
         }
 
         public bool DeleteLesson(int lessonId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public LessonDetail GetLessonById(int lessonId)
         {
             throw new NotImplementedException();
         }
@@ -64,9 +59,42 @@ namespace SiliconIndy.Services
             }
         }
 
+        public LessonDetail GetLessonByIdWithComments(int lessonId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+
+                var lesson = GetLessonById(ctx, lessonId);
+                var commentService = new CommentService(_ownerId, lessonId);
+
+                var entity =
+                    ctx
+                        .Lessons
+                        .Single(e => e.LessonId == lessonId && e.OwnerId == _ownerId);
+
+                return
+                    new LessonDetail
+                    {
+                        Title = entity.Title,
+                        Comments = commentService.GetCommentsByLessonId(lessonId)
+                    };
+            }
+        }
+
         public bool UpdateLesson(LessonEdit model)
         {
             throw new NotImplementedException();
+        }
+
+        private Lesson GetLessonById(ApplicationDbContext context, int lessonId)
+        {
+            using (context)
+            {
+                return
+                    context
+                        .Lessons
+                        .SingleOrDefault(e => e.LessonId == lessonId);
+            }
         }
     }
 }

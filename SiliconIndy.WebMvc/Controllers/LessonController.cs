@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace SiliconIndy.WebMvc.Controllers
 {
+    [Authorize]
     public class LessonController : Controller
     {
         // GET: Lesson
@@ -33,6 +34,14 @@ namespace SiliconIndy.WebMvc.Controllers
             lessonService.CreateLesson(lesson);
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(int id)
+        {
+            var service = CreateLessonService();
+            var model = service.GetLessonByIdWithComments(id);
+
+            return View(model);
         }
 
         public LessonService CreateLessonService()

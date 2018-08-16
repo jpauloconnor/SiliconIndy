@@ -62,12 +62,49 @@ namespace SiliconIndy.Services
 
         public ICollection<CommentListItem> GetCommentsByLessonId(int lessonId)
         {
-            throw new NotImplementedException();
+            using(var ctx = new ApplicationDbContext())
+            {
+                var comments =
+                    ctx
+                        .Comments
+                        .Where(c => c.LessonId == lessonId)
+                        .Select(
+                            e => new CommentListItem()
+                            {
+                                CommentId = e.CommentId,
+                                UserId = e.UserId,
+                                CommentText = e.CommentText,
+                                CreatedDate = e.CreatedDate
+
+                            });
+
+                var commentList = comments.ToList();
+
+                foreach (var comment in commentList)
+                {
+                    comment.UserName = GetNameFromUserId(comment.UserId);
+                }
+
+                return commentList;
+            }
         }
 
         public bool UpdateComment(CommentEdit model)
         {
             throw new NotImplementedException();
+        }
+
+        private string GetNameFromUserId(Guid userId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var user =
+                    ctx
+                        .Users
+                        .SingleOrDefault(u => u.Id == userId.ToString());
+
+                return user.UserName;
+            }
         }
     }
 }
