@@ -53,6 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentModels\CommentCreate.cs" />
+    <Compile Include="CommentModels\CommentDetail.cs" />
+    <Compile Include="CommentModels\CommentEdit.cs" />
+    <Compile Include="CommentModels\CommentListItem.cs" />
     <Compile Include="LessonModels\LessonCreate.cs" />
     <Compile Include="LessonModels\LessonDetail.cs" />
     <Compile Include="LessonModels\LessonEdit.cs" />
