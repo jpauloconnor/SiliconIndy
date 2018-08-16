@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LessonController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -265,6 +266,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Lesson\Index.cshtml" />
+    <Content Include="Views\Lesson\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -286,6 +289,14 @@
     <ProjectReference Include="..\SiliconIndy.Data\SiliconIndy.Data.csproj">
       <Project>{D7DC2DA1-BCA7-47C4-9210-0A6CA66A418B}</Project>
       <Name>SiliconIndy.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SiliconIndy.Models\SiliconIndy.Models.csproj">
+      <Project>{2612610D-5446-4BE1-9177-DC05F3AA5090}</Project>
+      <Name>SiliconIndy.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SiliconIndy.Services\SiliconIndy.Services.csproj">
+      <Project>{98654F5A-822C-4093-9423-1AEEA82C0BF4}</Project>
+      <Name>SiliconIndy.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
