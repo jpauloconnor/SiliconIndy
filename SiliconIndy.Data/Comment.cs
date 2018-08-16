@@ -13,6 +13,9 @@ namespace SiliconIndy.Data
         public int CommentId { get; set; }
 
         [Required]
+        public int LessonId { get; set; }
+
+        [Required]
         public Guid UserId { get; set; }
 
         [Required]

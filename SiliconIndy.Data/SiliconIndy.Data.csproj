@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201808161116550_comment.Designer.cs">
       <DependentUpon>201808161116550_comment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808161119105_addedfkforlesson.cs" />
+    <Compile Include="Migrations\201808161119105_addedfkforlesson.Designer.cs">
+      <DependentUpon>201808161119105_addedfkforlesson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Comment.cs" />
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808161116550_comment.resx">
       <DependentUpon>201808161116550_comment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808161119105_addedfkforlesson.resx">
+      <DependentUpon>201808161119105_addedfkforlesson.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
