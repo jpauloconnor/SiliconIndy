@@ -5,6 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
+using SiliconIndy.Data;
 using SiliconIndy.WebMvc.Models;
 
 namespace SiliconIndy.WebMvc

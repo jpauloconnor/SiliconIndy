@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SiliconIndy.Models.LessonModels
 {
-    class LessonListItem
+    public class LessonListItem
     {
         public int LessonId { get; set; }
 
