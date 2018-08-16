@@ -48,7 +48,20 @@ namespace SiliconIndy.Services
 
         public IEnumerable<LessonListItem> GetLessons()
         {
-            throw new NotImplementedException();
+            using (var ctx = new ApplicationDbContext())
+            {
+                var lessons =
+                    ctx
+                        .Lessons
+                        .Select(
+                            e => new LessonListItem()
+                            {
+                                LessonId = e.LessonId,
+                                Title = e.Title
+                            });
+
+                return lessons.ToList();
+            }
         }
 
         public bool UpdateLesson(LessonEdit model)
