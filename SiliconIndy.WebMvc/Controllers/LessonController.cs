@@ -14,7 +14,9 @@ namespace SiliconIndy.WebMvc.Controllers
         // GET: Lesson
         public ActionResult Index()
         {
-            return View();
+            var service = CreateLessonService();
+            var lessons = service.GetLessons();
+            return View(lessons);
         }
 
         public ActionResult Create()
