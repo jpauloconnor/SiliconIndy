@@ -1,4 +1,5 @@
 ﻿using SiliconIndy.Contracts;
+using SiliconIndy.Data;
 using SiliconIndy.Models.LessonModels;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,29 @@ namespace SiliconIndy.Services
 {
     public class LessonService : ILessonService
     {
+        private readonly Guid _ownerId;
+
+        public LessonService(Guid ownerId)
+        {
+            _ownerId = ownerId;
+        }
+
         public bool CreateLesson(LessonCreate model)
         {
-            throw new NotImplementedException();
+            var entity =
+                new Lesson
+                {
+                    OwnerId = _ownerId,
+                    Title = model.Title,
+                    Content = model.Content,
+                    CreatedUtc = DateTimeOffset.Now,
+                };
+
+            using(var context = new ApplicationDbContext())
+            {
+                context.Lessons.Add(entity);
+                return context.SaveChanges() == 1;
+            }
         }
 
         public bool DeleteLesson(int lessonId)
