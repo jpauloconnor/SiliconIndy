@@ -21,6 +21,8 @@ namespace SiliconIndy.Data
         [Required]
         public string Content { get; set; }
 
+        public virtual ICollection<Comment> Comments { get; set; }
+
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset ModifiedUtc { get; set; }

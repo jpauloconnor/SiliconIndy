@@ -23,7 +23,6 @@ namespace SiliconIndy.Services
             var entity =
                 new Lesson
                 {
-                    OwnerId = _ownerId,
                     Title = model.Title,
                     Content = model.Content,
                     CreatedUtc = DateTimeOffset.Now,

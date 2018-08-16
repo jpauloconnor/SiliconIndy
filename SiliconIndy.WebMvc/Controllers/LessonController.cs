@@ -29,11 +29,22 @@ namespace SiliconIndy.WebMvc.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(LessonCreate lesson)
         {
-            //TODO: Validation stuff
-            var lessonService = CreateLessonService();
-            lessonService.CreateLesson(lesson);
+            if (!ModelState.IsValid)
+            {
+                return View(lesson);
+            }
 
-            return RedirectToAction("Index");
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new LessonService(userId);
+
+            if (service.CreateLesson(lesson))
+            {
+                TempData["SaveResult"] = "Your lesson was created.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Lesson could not be created");
+            return View(lesson);
         }
 
         public ActionResult Details(int id)
