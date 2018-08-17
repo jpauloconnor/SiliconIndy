@@ -1,23 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SiliconIndy.Data
-{ 
-    public static class LessonData
+{
+    public class LessonData
     {
-        public enum LessonType
-        {
-            [Description("JavaScript")]
-            JavaScript = 1,
-            [Description("C#")]
-            CSharp = 2,
-            [Description("HTML")]
-            HTML = 3
-        }
+        [Key]
+        public int LessonDataID { get; set; }
+
+        [Required]
+        public int LessonID { get; set; }
+
+        [Required]
+        public bool JavaScript { get; set; }
+
+        [Required]
+        public bool CSharp { get; set; }
+
+        [Required]
+        public bool HTML { get; set; }
     }
-   
 }

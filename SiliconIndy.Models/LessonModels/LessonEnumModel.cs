@@ -9,7 +9,7 @@ namespace SiliconIndy.Models.LessonModels
 {
     public class LessonEnumModel
     {
-        public LessonData.LessonType LessonType { get; set; }
+        public LessonTypeModel.LessonType LessonType { get; set; }
         public bool IsSelected { get; set; }
     }
 }

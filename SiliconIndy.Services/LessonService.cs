@@ -22,13 +22,41 @@ namespace SiliconIndy.Services
 
         public bool CreateLesson(LessonCreate model)
         {
+            bool CSharp = false;
+            bool JS = false;
+            bool HTML = false;
+
+            foreach (var item in model.CheckBoxItems)
+            {
+                switch (item.LessonType)
+                {
+                    case LessonTypeModel.LessonType.CSharp:
+                        if (item.IsSelected)
+                        CSharp = true;
+                        break;
+                    case LessonTypeModel.LessonType.HTML:
+                        if(item.IsSelected)
+                        HTML = true;
+                        break;
+                    case LessonTypeModel.LessonType.JavaScript:
+                        if (item.IsSelected)
+                        JS = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
             var entity =
                 new Lesson()
                 {
                     Title = model.Title,
+                    OwnerId = _ownerId,
+                    CSharp = CSharp,
+                    HTML = HTML,
+                    JavaScript = JS,
                     Content = model.Content,
-                    //LessonType = model.CheckBoxItems,//TODO: Fix this
-                    CreatedUtc = DateTimeOffset.Now,
+                    CreatedUtc = DateTimeOffset.Now
                 };
 
             using (var context = new ApplicationDbContext())
@@ -37,7 +65,6 @@ namespace SiliconIndy.Services
                 return context.SaveChanges() == 1;
             }
         }
-
 
         public ICollection<LessonListItem> GetLessons()
         {
