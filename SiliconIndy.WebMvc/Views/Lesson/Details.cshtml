@@ -5,8 +5,6 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div class="row">
     <div class="container">
         <div class="row display-section">
@@ -24,18 +22,19 @@
     </div>
 </div>
 
-<hr />
 
 <div class="row">
     <div class="container">
         @foreach (var item in Model.Comments)
         {
-            <div class ="row">
+            <div class="row review">
                 <div class="col-md-12">
                     <h2>
-                        @Html.DisplayFor(modelItem => item.UserName) |
-                        @Html.DisplayFor(modelItem => item.CommentText)
+                        @Html.DisplayFor(modelItem => item.UserName) 
                     </h2>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.CommentText)
+                    </p>
 
                     @if (User.Identity.GetUserId() == item.UserId.ToString())
                     {
@@ -46,4 +45,4 @@
             </div>
         }
     </div>
- </div>
+</div>

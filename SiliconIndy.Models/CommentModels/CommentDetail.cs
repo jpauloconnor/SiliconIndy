@@ -12,7 +12,7 @@ namespace SiliconIndy.Models.CommentModels
         public Guid UserId { get; set; }
         public string UserName { get; set; }
         public int LessonId { get; set; }
-        public string ReviewText { get; set; }
+        public string CommentText { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset? ModifiedDate { get; set; }
     }

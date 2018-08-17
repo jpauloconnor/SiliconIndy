@@ -10,9 +10,9 @@ namespace SiliconIndy.Contracts
     public interface ICommentService
     {
         bool CreateComment(CommentCreate model);
-        ICollection<CommentListItem> GetComments();
-        ICollection<CommentListItem> GetCommentsByLessonId(int lessonId);
-        CommentDetail GetCommentById(int lessonId);
+        ICollection<CommentListItem> GetAllComments();
+        ICollection<CommentListItem> GetAllCommentsByLessonId(int lessonId);
+        CommentDetail GetSingleCommentById(int lessonId);
         bool UpdateComment(CommentEdit model);
         bool DeleteComment(int lessonId);
     }

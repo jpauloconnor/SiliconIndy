@@ -9,14 +9,14 @@ using System.Web.Mvc;
 
 namespace SiliconIndy.WebMvc.Controllers
 {
-    [Authorize]
     public class CommentController : Controller
     {
-        public ActionResult Create(int lessonId)
+        [Authorize]
+        public ActionResult Create(int id)
         {
             var model = new CommentCreate
             {
-                LessonId = lessonId,
+                LessonId = id,
                 UserId = Guid.Parse(User.Identity.GetUserId()) 
             };
             return View(model);
@@ -26,7 +26,13 @@ namespace SiliconIndy.WebMvc.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CommentCreate comment)
         {
-            var service = CreateCommentService(comment);
+            if (!ModelState.IsValid)
+            {
+                return View(comment);
+            }
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CommentService(userId, comment.LessonId);
 
             if (service.CreateComment(comment))
             {
@@ -38,11 +44,5 @@ namespace SiliconIndy.WebMvc.Controllers
             return View(comment);
         }
         
-        private CommentService CreateCommentService(CommentCreate comment)
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CommentService(userId, comment.LessonId);
-            return service;
-        }
     }
 }

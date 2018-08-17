@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<SiliconIndy.Models.LessonModels.LessonListItem>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "All Products";
 }
 
-<h2>Index</h2>
+<br />
 
 <div class="row">
     <div class="container">
@@ -13,7 +13,7 @@
                 <h1>All Lessons</h1>
 
                 <p>
-                    @Html.ActionLink("Create New", "Create")
+                    @Html.ActionLink("Add Lesson", "Create")
                 </p>
             </div>
         </div>
@@ -27,10 +27,23 @@
                 <ul>
                     @foreach (var item in Model)
                     {
-                        <li class="product-list">
+                        <li class="comment-list">
                             <h2>
                                 @Html.ActionLink(item.Title, "Details", new { id = item.LessonId })
                             </h2>
+                            @if (item.CommentCount == 1)
+                            {
+                                <p>
+                                    @Html.DisplayFor(modelItem => item.CommentCount) Comment
+                                </p>
+                            }
+                            else
+                            {
+                                <p>
+                                    @Html.DisplayFor(modelItem => item.CommentCount) Comments
+                                </p>
+                            }
+                            <div class="clearfix"></div>
                         </li>
                     }
                 </ul>

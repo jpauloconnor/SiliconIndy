@@ -10,17 +10,11 @@ namespace SiliconIndy.Models.LessonModels
     public class LessonDetail
     {
         public int LessonId { get; set; }
-
         public string Title { get; set; }
-
         public string Content { get; set; }
-
         public DateTimeOffset CreatedUtc { get; set; }
-
         public DateTimeOffset? ModifiedUtc { get; set; }
 
         public virtual ICollection<CommentListItem> Comments { get; set; } = new List<CommentListItem>();
-
-        public override string ToString() => $"[{LessonId}] {Title}";
     }
 }

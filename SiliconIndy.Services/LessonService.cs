@@ -13,6 +13,8 @@ namespace SiliconIndy.Services
     {
         private readonly Guid _ownerId;
 
+        public LessonService() { }
+
         public LessonService(Guid ownerId)
         {
             _ownerId = ownerId;
@@ -21,7 +23,7 @@ namespace SiliconIndy.Services
         public bool CreateLesson(LessonCreate model)
         {
             var entity =
-                new Lesson
+                new Lesson()
                 {
                     Title = model.Title,
                     Content = model.Content,
@@ -50,23 +52,33 @@ namespace SiliconIndy.Services
                                 Title = e.Title
                             });
 
-                return lessons.ToList();
+                var lessonList = lessons.ToList();
+
+                var commentService = new CommentService();
+
+                foreach(var lesson in lessonList)
+                {
+                    lesson.CommentCount = commentService.GetCommentCountByLessonId(lesson.LessonId);
+                }
+
+                return lessonList;
             }
         }
 
-        public LessonDetail GetLessonByIdWithComments(int lessonId)
+        public LessonDetail GetLessonById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
 
-                var lesson = GetLesson(ctx, lessonId);
-                var commentService = new CommentService(_ownerId, lessonId);
+                var lesson = GetLesson(ctx, id);
+                var commentService = new CommentService(_ownerId, id);
 
                 return
                     new LessonDetail
                     {
+                        LessonId = lesson.LessonId,
                         Title = lesson.Title,
-                        Comments = commentService.GetCommentsByLessonId(lessonId)
+                        Comments = commentService.GetAllCommentsByLessonId(id)
                     };
             }
         }
@@ -83,14 +95,14 @@ namespace SiliconIndy.Services
         }
 
 
-        private Lesson GetLesson(ApplicationDbContext context, int lessonId)
+        private Lesson GetLesson(ApplicationDbContext context, int id)
         {
             using (context)
             {
                 return
                     context
                         .Lessons
-                        .SingleOrDefault(e => e.LessonId == lessonId);
+                        .SingleOrDefault(e => e.LessonId == id);
             }
         }
     }

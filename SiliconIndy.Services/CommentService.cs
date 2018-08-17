@@ -38,6 +38,7 @@ namespace SiliconIndy.Services
                    CreatedDate = DateTimeOffset.UtcNow,
                    UserName = "TemporaryPlaceholderName" //TODO: Helper to get username
                };
+
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Comments.Add(entity);
@@ -45,22 +46,53 @@ namespace SiliconIndy.Services
             }
         }
 
-        public bool DeleteComment(int lessonId)
+        public CommentDetail GetSingleCommentById(int commentId)
         {
-            throw new NotImplementedException();
+            using (var ctx = new ApplicationDbContext())
+            {
+                var comment =
+                    ctx
+                        .Comments
+                        .SingleOrDefault(r => r.CommentId == commentId);
+
+                return
+                    new CommentDetail()
+                    {
+                        UserId = comment.UserId,
+                        LessonId = comment.LessonId,
+                        CommentText = comment.CommentText,
+                        CommentId = comment.CommentId,
+                        UserName = comment.UserName,
+                        CreatedDate = comment.CreatedDate,
+                        ModifiedDate = comment.CreatedDate
+                    };
+            }
         }
 
-        public CommentDetail GetCommentById(int lessonId)
+        public ICollection<CommentListItem> GetAllComments()
         {
-            throw new NotImplementedException();
+            using (var ctx = new ApplicationDbContext())
+            {
+                var comments =
+                    ctx
+                        .Comments
+                        .Where(r => r.UserId == _userId)
+                        .Select(
+                            e => new CommentListItem()
+                            {
+                                CommentId = e.CommentId,
+                                UserId = e.UserId,
+                                CommentText = e.CommentText,
+                                UserName = "Dude",
+                                CreatedDate = e.CreatedDate,
+                                ModifiedDate = e.CreatedDate //TODO: Fix this one.
+                            });
+
+                return comments.ToList();
+            }
         }
 
-        public ICollection<CommentListItem> GetComments()
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICollection<CommentListItem> GetCommentsByLessonId(int lessonId)
+        public ICollection<CommentListItem> GetAllCommentsByLessonId(int lessonId)
         {
             using(var ctx = new ApplicationDbContext())
             {
@@ -94,6 +126,26 @@ namespace SiliconIndy.Services
             throw new NotImplementedException();
         }
 
+
+        public bool DeleteComment(int lessonId)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public int GetCommentCountByLessonId(int lessonId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var count =
+                    ctx
+                        .Comments
+                        .Where(r => r.LessonId == lessonId)
+                        .Select(e => e);
+
+                return count.ToList().Count();
+            }
+        }
         private string GetNameFromUserId(Guid userId)
         {
             using (var ctx = new ApplicationDbContext())

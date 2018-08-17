@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SiliconIndy.Models.CommentModels;
 
 namespace SiliconIndy.Models.LessonModels
 {
@@ -13,9 +14,8 @@ namespace SiliconIndy.Models.LessonModels
 
         public string Title { get; set; }
 
-        [Display(Name = "Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
+        public int CommentCount { get; set; }
 
-        public override string ToString() => $"[{LessonId}] {Title}";
+        public DateTimeOffset CreatedUtc { get; set; }
     }
 }

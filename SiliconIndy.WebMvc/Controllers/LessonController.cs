@@ -9,17 +9,17 @@ using System.Web.Mvc;
 
 namespace SiliconIndy.WebMvc.Controllers
 {
-    [Authorize]
     public class LessonController : Controller
     {
-        // GET: Lesson
+        [AllowAnonymous]
         public ActionResult Index()
         {
-            var service = CreateLessonService();
+            var service = new LessonService();
             var lessons = service.GetLessons();
             return View(lessons);
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -27,15 +27,13 @@ namespace SiliconIndy.WebMvc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(LessonCreate lesson)
         {
             if (!ModelState.IsValid)
-            {
                 return View(lesson);
-            }
 
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new LessonService(userId);
+            var service = CreateLessonService();
 
             if (service.CreateLesson(lesson))
             {
@@ -47,15 +45,17 @@ namespace SiliconIndy.WebMvc.Controllers
             return View(lesson);
         }
 
+
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
-            var service = CreateLessonService();
-            var model = service.GetLessonByIdWithComments(id);
+            var service = new LessonService();
+            var model = service.GetLessonById(id);
 
             return View(model);
         }
 
-        public LessonService CreateLessonService()
+        private LessonService CreateLessonService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new LessonService(userId);

@@ -11,7 +11,7 @@ namespace SiliconIndy.Contracts
     {
         bool CreateLesson(LessonCreate model);
         ICollection<LessonListItem> GetLessons();
-        LessonDetail GetLessonByIdWithComments(int lessonId);
+        LessonDetail GetLessonById(int lessonId);
         bool UpdateLesson(LessonEdit model);
         bool DeleteLesson(int lessonId);
     }
