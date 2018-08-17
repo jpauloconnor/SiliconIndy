@@ -23,11 +23,13 @@ namespace SiliconIndy.WebMvc.Controllers
         public ActionResult Create()
         {
             var lesson = new LessonCreate();
-            lesson.CheckBoxItems = new List<LessonEnumModel>();
-            lesson.CheckBoxItems.Add(new LessonEnumModel() { LessonType = Data.LessonTypeModel.LessonType.CSharp, IsSelected = false });
-            lesson.CheckBoxItems.Add(new LessonEnumModel() { LessonType = Data.LessonTypeModel.LessonType.JavaScript, IsSelected = false });
-            lesson.CheckBoxItems.Add(new LessonEnumModel() { LessonType = Data.LessonTypeModel.LessonType.HTML, IsSelected = false });
-
+            lesson.CheckBoxItems = new List<LessonEnumModel>
+            {
+                new LessonEnumModel() { LessonType = Data.LessonTypeModel.LessonType.CSharp, IsSelected = false },
+                new LessonEnumModel() { LessonType = Data.LessonTypeModel.LessonType.JavaScript, IsSelected = false },
+                new LessonEnumModel() { LessonType = Data.LessonTypeModel.LessonType.HTML, IsSelected = false }
+            };
+           
             return View(lesson);
         }
 
@@ -50,7 +52,6 @@ namespace SiliconIndy.WebMvc.Controllers
             ModelState.AddModelError("", "Lesson could not be created");
             return View(lesson);
         }
-
 
         [AllowAnonymous]
         public ActionResult Details(int id)

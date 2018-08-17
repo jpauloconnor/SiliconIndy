@@ -132,7 +132,6 @@ namespace SiliconIndy.Services
             throw new NotImplementedException();
         }
 
-
         public int GetCommentCountByLessonId(int lessonId)
         {
             using (var ctx = new ApplicationDbContext())
@@ -146,6 +145,7 @@ namespace SiliconIndy.Services
                 return count.ToList().Count();
             }
         }
+
         private string GetNameFromUserId(Guid userId)
         {
             using (var ctx = new ApplicationDbContext())
