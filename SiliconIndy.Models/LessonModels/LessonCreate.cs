@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SiliconIndy.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace SiliconIndy.Models.LessonModels
 
         [Required]
         public string Content { get; set; }
+
+        public List<LessonEnumModel> CheckBoxItems { get; set; }
     }
 }

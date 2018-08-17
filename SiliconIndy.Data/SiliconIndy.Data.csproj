@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Lesson.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="LessonData.cs" />
     <Compile Include="Migrations\201808161110597_InitialCreate.cs" />
     <Compile Include="Migrations\201808161110597_InitialCreate.Designer.cs">
       <DependentUpon>201808161110597_InitialCreate.cs</DependentUpon>
@@ -74,6 +75,10 @@
     <Compile Include="Migrations\201808161750520_alterationstodata.cs" />
     <Compile Include="Migrations\201808161750520_alterationstodata.Designer.cs">
       <DependentUpon>201808161750520_alterationstodata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808170205138_enumadded.cs" />
+    <Compile Include="Migrations\201808170205138_enumadded.Designer.cs">
+      <DependentUpon>201808170205138_enumadded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808161750520_alterationstodata.resx">
       <DependentUpon>201808161750520_alterationstodata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808170205138_enumadded.resx">
+      <DependentUpon>201808170205138_enumadded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

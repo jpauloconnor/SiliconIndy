@@ -22,7 +22,13 @@ namespace SiliconIndy.WebMvc.Controllers
         [Authorize]
         public ActionResult Create()
         {
-            return View();
+            var lesson = new LessonCreate();
+            lesson.CheckBoxItems = new List<LessonEnumModel>();
+            lesson.CheckBoxItems.Add(new LessonEnumModel() { LessonType = Data.LessonData.LessonType.CSharp, IsSelected = false });
+            lesson.CheckBoxItems.Add(new LessonEnumModel() { LessonType = Data.LessonData.LessonType.JavaScript, IsSelected = false });
+            lesson.CheckBoxItems.Add(new LessonEnumModel() { LessonType = Data.LessonData.LessonType.HTML, IsSelected = false });
+
+            return View(lesson);
         }
 
         [HttpPost]

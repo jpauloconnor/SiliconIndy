@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static SiliconIndy.Data.LessonData;
 
 namespace SiliconIndy.Data
 {
@@ -21,7 +22,7 @@ namespace SiliconIndy.Data
         [Required]
         public string Content { get; set; }
 
-        public virtual ICollection<Comment> Comments { get; set; }
+        public LessonType LessonType { get; set; }
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

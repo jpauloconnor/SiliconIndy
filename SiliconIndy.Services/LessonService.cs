@@ -27,6 +27,7 @@ namespace SiliconIndy.Services
                 {
                     Title = model.Title,
                     Content = model.Content,
+                    //LessonType = model.CheckBoxItems,//TODO: Fix this
                     CreatedUtc = DateTimeOffset.Now,
                 };
 

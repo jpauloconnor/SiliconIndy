@@ -61,11 +61,18 @@
     <Compile Include="LessonModels\LessonDetail.cs" />
     <Compile Include="LessonModels\LessonEdit.cs" />
     <Compile Include="LessonModels\LessonListItem.cs" />
+    <Compile Include="LessonModels\LessonEnumModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SiliconIndy.Data\SiliconIndy.Data.csproj">
+      <Project>{D7DC2DA1-BCA7-47C4-9210-0A6CA66A418B}</Project>
+      <Name>SiliconIndy.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
