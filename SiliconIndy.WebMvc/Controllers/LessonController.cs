@@ -19,7 +19,7 @@ namespace SiliconIndy.WebMvc.Controllers
             return View(lessons);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             var lesson = new LessonCreate();
@@ -35,7 +35,7 @@ namespace SiliconIndy.WebMvc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(LessonCreate lesson)
         {
             if (!ModelState.IsValid)

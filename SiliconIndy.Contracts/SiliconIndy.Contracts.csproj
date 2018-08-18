@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="ICommentService.cs" />
     <Compile Include="ILessonService.cs" />
+    <Compile Include="IAdminService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +63,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SiliconIndy.Data\SiliconIndy.Data.csproj">
+      <Project>{D7DC2DA1-BCA7-47C4-9210-0A6CA66A418B}</Project>
+      <Name>SiliconIndy.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SiliconIndy.Models\SiliconIndy.Models.csproj">
       <Project>{2612610D-5446-4BE1-9177-DC05F3AA5090}</Project>
       <Name>SiliconIndy.Models</Name>

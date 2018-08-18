@@ -202,6 +202,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LessonController.cs" />
@@ -293,6 +294,12 @@
     <Content Include="Views\Lesson\Create.cshtml" />
     <Content Include="Views\Lesson\Details.cshtml" />
     <Content Include="Views\Comment\Create.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Error.cshtml" />
+    <Content Include="Views\Admin\RoleIndex.cshtml" />
+    <Content Include="Views\Role\Error.cshtml" />
+    <Content Include="Views\Admin\RoleCreate.cshtml" />
+    <Content Include="Views\Admin\UserIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

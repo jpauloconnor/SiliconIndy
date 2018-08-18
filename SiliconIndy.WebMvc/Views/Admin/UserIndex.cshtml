@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityUser>
+@{
+    ViewBag.Title = "Add User";
+}
+
+<h3>@Html.ActionLink("Click to Create New User", "UserCreate", "Admin") </h3>
+
+<table>
+    <tr>
+        <td align="center" colspan="2">
+            <h2> Current Users</h2>
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+            <table>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.UserName
+                        </td>
+                    </tr>
+                }
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+
+

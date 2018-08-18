@@ -49,9 +49,8 @@ namespace SiliconIndy.WebMvc.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +63,11 @@ namespace SiliconIndy.WebMvc.Models
 
     public class RegisterViewModel
     {
+
+        [Required]
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
