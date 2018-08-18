@@ -53,7 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminModels\AdminUserCreate.cs" />
     <Compile Include="CommentModels\CommentCreate.cs" />
     <Compile Include="CommentModels\CommentDetail.cs" />
     <Compile Include="CommentModels\CommentEdit.cs" />
@@ -74,6 +73,9 @@
       <Project>{D7DC2DA1-BCA7-47C4-9210-0A6CA66A418B}</Project>
       <Name>SiliconIndy.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AdminModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

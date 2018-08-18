@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using SiliconIndy.Data;
-using SiliconIndy.Models.AdminModels;
 using SiliconIndy.Services;
 using SiliconIndy.WebMvc.Models;
 using System;

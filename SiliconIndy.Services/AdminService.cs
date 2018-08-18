@@ -8,7 +8,6 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using SiliconIndy.Data;
 using SiliconIndy.Contracts;
-using SiliconIndy.Models.AdminModels;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 
