@@ -1,0 +1,60 @@
+﻿@model SiliconIndy.Models.ProductModels.ProductModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Products For Sale</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <h4 class="text-center"><span class="label label-info">C# E-Book</span></h4>
+                <img src="~/Content/images/main-book.png" />
+                <div class="caption">
+                    <div class="row">
+                        <div class="col-md-6 col-xs-6">
+                            <h3>CSharp E Book</h3>
+                        </div>
+                        <div class="col-md-6 col-xs-6 price">
+                            <h3>
+                                <label>$19</label>
+                            </h3>
+                        </div>
+                    </div>
+                    <p>C# Fundamentals</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a class="btn btn-primary btn-product"><span class="glyphicon glyphicon-thumbs-up"></span>Like</a>
+                        </div>
+                        <div class="col-md-6">
+
+                            @using (Html.BeginForm("Confirmation", "Charge", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                <script src="https://checkout.stripe.com/checkout.js"
+                                        class="stripe-button"
+                                        data-key="@Model.StripePublishableKey"
+                                        data-amount="3900"
+                                        data-name="Bootcamp Survival"
+                                        data-description='Bootcamp Survival Guide'
+                                        data-image="/Content/images/main-book.png">
+                                </script>
+                            }
+
+                        </div>
+                    </div>
+
+                    <p> </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+

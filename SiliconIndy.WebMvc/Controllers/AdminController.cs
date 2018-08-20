@@ -70,7 +70,6 @@ namespace SiliconIndy.WebMvc.Controllers
         [HttpPost]
         public ActionResult RoleCreate(IdentityRole Role)
         {
-            //TODO: Create Roles....
             var svc = CreateAdminService();
 
             if (!svc.IsAdminUser())
