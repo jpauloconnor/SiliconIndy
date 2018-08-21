@@ -87,6 +87,7 @@ namespace SiliconIndy.WebMvc.Controllers
             return View();
         }
 
+
         private AdminService CreateAdminService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

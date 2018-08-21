@@ -93,6 +93,18 @@ namespace SiliconIndy.Services
             }
         }
 
+        public LessonDetail GetRandomLessonFromList()
+        {
+            var lessonList = GetLessons();
+
+            Random randomLesson = new Random();
+            var lessonId = randomLesson.Next(lessonList.Count);
+
+            var lesson = GetLessonById(lessonId);
+
+            return lesson;
+
+        }
         public LessonDetail GetLessonById(int id)
         {
             using (var ctx = new ApplicationDbContext())
