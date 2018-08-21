@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using SiliconIndy.Contracts;
 using SiliconIndy.Models.LessonModels;
 using SiliconIndy.Services;
 using System;
@@ -11,11 +12,24 @@ namespace SiliconIndy.WebMvc.Controllers
 {
     public class LessonController : Controller
     {
+        private readonly Lazy<ILessonService> _lessonService;
+        private ILessonService LessonService => _lessonService.Value;
+
+        public LessonController()
+        {
+            _lessonService = new Lazy<ILessonService>(() =>
+                new LessonService(Guid.Parse(User.Identity.GetUserId())));
+        }
+
+        public LessonController(Lazy<ILessonService> lessonService)
+        {
+            _lessonService = lessonService;
+        }
+
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var service = new LessonService();
-            var lessons = service.GetLessons();
+            var lessons = LessonService.GetLessons();
             return View(lessons);
         }
 
@@ -41,9 +55,7 @@ namespace SiliconIndy.WebMvc.Controllers
             if (!ModelState.IsValid)
                 return View(lesson);
 
-            var service = CreateLessonService();
-
-            if (service.CreateLesson(lesson))
+            if (LessonService.CreateLesson(lesson))
             {
                 TempData["SaveResult"] = "Your lesson was created.";
                 return RedirectToAction("Index");
@@ -60,13 +72,6 @@ namespace SiliconIndy.WebMvc.Controllers
             var model = service.GetLessonById(id);
 
             return View(model);
-        }
-
-        private LessonService CreateLessonService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new LessonService(userId);
-            return service;
         }
     }
 }

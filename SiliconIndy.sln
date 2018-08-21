@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiliconIndy.Models", "Silic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiliconIndy.Services", "SiliconIndy.Services\SiliconIndy.Services.csproj", "{98654F5A-822C-4093-9423-1AEEA82C0BF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiliconIndy.WebMvc.UnitTests", "SiliconIndy.WebMvc.UnitTests\SiliconIndy.WebMvc.UnitTests.csproj", "{435D5D8D-E6FC-4F0C-9F56-E71675CEAC74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{98654F5A-822C-4093-9423-1AEEA82C0BF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98654F5A-822C-4093-9423-1AEEA82C0BF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98654F5A-822C-4093-9423-1AEEA82C0BF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{435D5D8D-E6FC-4F0C-9F56-E71675CEAC74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{435D5D8D-E6FC-4F0C-9F56-E71675CEAC74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{435D5D8D-E6FC-4F0C-9F56-E71675CEAC74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{435D5D8D-E6FC-4F0C-9F56-E71675CEAC74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -329,6 +329,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SiliconIndy.Contracts\SiliconIndy.Contracts.csproj">
+      <Project>{704CD94D-3D59-46A5-B772-94EE3E8AEDC0}</Project>
+      <Name>SiliconIndy.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SiliconIndy.Data\SiliconIndy.Data.csproj">
       <Project>{D7DC2DA1-BCA7-47C4-9210-0A6CA66A418B}</Project>
       <Name>SiliconIndy.Data</Name>
