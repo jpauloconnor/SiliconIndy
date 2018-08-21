@@ -19,6 +19,12 @@ namespace SiliconIndy.WebMvc
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/js/bootstrap.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/codemirror_csharp").Include(
+                      "~/Scripts/codemirror.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/codemirror_csharp").Include(
+                      "~/Scripts/codemirror_csharp.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/css/bootstrap.css",
                       "~/Content/css/font-awesome.css",
