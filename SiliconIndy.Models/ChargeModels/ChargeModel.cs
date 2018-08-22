@@ -10,5 +10,15 @@ namespace SiliconIndy.Models.ChargeModels
     {
         public string StripeToken { get; set; }
         public string StripeEmail { get; set; }
+        public string StripePublishableKey { get; set; }
+        public bool PaymentFormHidden { get; set; }
+
+        public string PaymentFormHiddenCss
+        {
+            get
+            {
+                return PaymentFormHidden ? "hidden" : "";
+            }
+        }
     }
 }

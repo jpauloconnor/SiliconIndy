@@ -103,8 +103,8 @@ namespace SiliconIndy.Services
             var lesson = GetLessonById(lessonId);
 
             return lesson;
-
         }
+
         public LessonDetail GetLessonById(int id)
         {
             using (var ctx = new ApplicationDbContext())
