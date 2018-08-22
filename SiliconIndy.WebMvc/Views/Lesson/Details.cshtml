@@ -9,9 +9,26 @@
     <div class="container">
         <div class="row display-section">
             <div class="col-md-12">
-                <h1>@Html.DisplayFor(model => model.Title)</h1>
+                <h1>Fix the Code for @Html.DisplayFor(model => model.Title)</h1>
+                <p style="max-width:1000">
+                    <table class="run">
+                        <tbody>
+                            <tr>
+                                <td valign="top" width="550">
+                                    <!-- CODE -->
+                                    <textarea id="code1-ex2" rows="4" cols="70" class="tacode" spellcheck="false" onkeypress="return handleCR(this ,event)">@Html.DisplayFor(model => model.Content)</textarea>
+                                    <br><input type="button" style="width:220;height:40;background-color:lightgray" value="Run" onclick="evaluateClear(&quot;code1-ex2&quot;)">
+                                </td>
+                                <td valign="top">
+                                    <!-- OUTPUT -->
+                                    <div id="code1-ex2-output" style="font-family:courier;font-size:14;"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p><p>
 
-                <br />
+                    <br />
 
                 <p>
                     @Html.ActionLink("Back to List", "Index") |
@@ -30,7 +47,7 @@
             <div class="row review">
                 <div class="col-md-12">
                     <h2>
-                        @Html.DisplayFor(modelItem => item.UserName) 
+                        @Html.DisplayFor(modelItem => item.UserName)
                     </h2>
                     <p>
                         @Html.DisplayFor(modelItem => item.CommentText)
@@ -46,3 +63,4 @@
         }
     </div>
 </div>
+

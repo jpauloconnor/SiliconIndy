@@ -78,6 +78,7 @@ namespace SiliconIndy.Services
                             {
                                 LessonId = e.LessonId,
                                 Title = e.Title
+                                
                             });
 
                 var lessonList = lessons.ToList();
@@ -118,6 +119,7 @@ namespace SiliconIndy.Services
                     {
                         LessonId = lesson.LessonId,
                         Title = lesson.Title,
+                        Content = lesson.Content,
                         Comments = commentService.GetAllCommentsByLessonId(id)
                     };
             }
