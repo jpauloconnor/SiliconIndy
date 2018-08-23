@@ -16,7 +16,7 @@ namespace SiliconIndy.WebMvc.UnitTests
         {
             base.Arrange();
 
-            _lessonService.CreateLessonReturnValue = true;
+            _lessonService.ReturnValue = true;
             _model = new LessonCreate();
         }
 
@@ -26,7 +26,7 @@ namespace SiliconIndy.WebMvc.UnitTests
         }
 
         [TestMethod]
-        public void LessonController_ShouldReturnRedirectToRouteResult()
+        public void LessonController_Create_ShouldReturnRedirectToRouteResult()
         {
             var result = Act();
 
@@ -34,15 +34,15 @@ namespace SiliconIndy.WebMvc.UnitTests
         }
 
         [TestMethod]
-        public void LessonController_ShouldCallCreateLesson()
+        public void LessonController_Create_ShouldCallCreateLesson()
         {
             Act();
 
-            Assert.AreEqual(1, _lessonService.CreateLessonCallCount);
+            Assert.AreEqual(1, _lessonService.CallCount);
         }
 
         [TestMethod]
-        public void LessonController_ShouldSetSaveResult()
+        public void LessonController_Create_ShouldSetSaveResult()
         {
             Act();
 
@@ -51,7 +51,7 @@ namespace SiliconIndy.WebMvc.UnitTests
         
 
         [TestMethod]
-        public void LessonController_ShouldRedirectToIndex()
+        public void LessonController_Create_ShouldRedirectToIndex()
         {
             var result = (RedirectToRouteResult)Act();
 
@@ -59,7 +59,7 @@ namespace SiliconIndy.WebMvc.UnitTests
         }
 
         [TestMethod]
-        public void LessonController_ShouldReturnViewResultWithOriginalModel_GivenInvalidModelState()
+        public void LessonController_Create_ShouldReturnViewResultWithOriginalModel_GivenInvalidModelState()
         {
             _controller.ModelState.AddModelError("", "test error");
 
@@ -71,9 +71,9 @@ namespace SiliconIndy.WebMvc.UnitTests
 
 
         [TestMethod]
-        public void LessonController_ShouldSetErrorMessage_GivenCreateLessonFails()
+        public void LessonController_Create_ShouldSetErrorMessage_GivenCreateLessonFails()
         {
-            _lessonService.CreateLessonReturnValue = false;
+            _lessonService.ReturnValue = false;
 
             Act();
 
@@ -81,9 +81,9 @@ namespace SiliconIndy.WebMvc.UnitTests
         }
 
         [TestMethod]
-        public void LessonController_ShouldReturnViewResultWithOriginalModel_GivenCreateLessonFails()
+        public void LessonController_Create_ShouldReturnViewResultWithOriginalModel_GivenCreateLessonFails()
         {
-            _lessonService.CreateLessonReturnValue = false;
+            _lessonService.ReturnValue = false;
 
             var result = Act();
 

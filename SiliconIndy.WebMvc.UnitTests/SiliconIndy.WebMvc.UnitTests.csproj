@@ -74,6 +74,7 @@
     <Compile Include="LessonControllerTestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CreateLessonTests.cs" />
+    <Compile Include="ReadLessonTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

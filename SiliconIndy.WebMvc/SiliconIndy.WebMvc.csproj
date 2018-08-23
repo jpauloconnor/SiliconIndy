@@ -224,6 +224,7 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\codemirror.css" />
+    <Content Include="Content\codemirrorcsharp.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\styles.css" />
@@ -243,7 +244,6 @@
     <Content Include="Content\css\site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\checkout.js" />
-    <Content Include="Scripts\clike.js" />
     <Content Include="Scripts\CodeMirror\addon\comment\comment.js" />
     <Content Include="Scripts\CodeMirror\addon\comment\continuecomment.js" />
     <Content Include="Scripts\CodeMirror\addon\dialog\dialog.css" />
@@ -650,7 +650,6 @@
     <Content Include="Scripts\CodeMirror\theme\xq-light.css" />
     <Content Include="Scripts\CodeMirror\theme\yeti.css" />
     <Content Include="Scripts\CodeMirror\theme\zenburn.css" />
-    <Content Include="Scripts\codemirror_csharp.js" />
     <Content Include="Scripts\cs101-simulation.js" />
     <Content Include="Scripts\cs101-table.js" />
     <Content Include="Scripts\cs101.js" />

@@ -6,15 +6,15 @@
 
 <br />
 
-    <div class="row">
-        <div class="container">
-            <div class="row display-section">
-                <div class="col-md-12">
-                    <h1>All Lessons</h1>
+<div class="row">
+    <div class="container">
+        <div class="row display-section">
+            <div class="col-md-12">
+                <h1>All Lessons</h1>
 
-<p>
-    @Html.ActionLink("Add Lesson", "Create")
-</p>
+                <p>
+                    @Html.ActionLink("Add Lesson", "Create")
+                </p>
             </div>
         </div>
     </div>
@@ -53,12 +53,3 @@
 </div>
 
 
-
-
-@section Scripts {
-    <script>
-        $().ready(function() {
-            var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("code1_ex1"));
-        });
-    </script>
-}

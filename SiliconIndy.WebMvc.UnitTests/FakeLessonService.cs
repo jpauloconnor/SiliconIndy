@@ -10,24 +10,31 @@ namespace SiliconIndy.WebMvc.UnitTests
 {
     public class FakeLessonService : ILessonService
     {
-        public int CreateLessonCallCount { get; private set; }
-        public bool CreateLessonReturnValue { private get; set; }
+        public int CallCount { get; private set; }
+        public bool ReturnValue { private get; set; }
 
         public bool CreateLesson(LessonCreate model)
         {
-            CreateLessonCallCount++;
+            CallCount++;
 
-            return CreateLessonReturnValue;
+            return ReturnValue;
         }
 
         public bool DeleteLesson(int lessonId)
         {
-            throw new NotImplementedException();
+            CallCount--;
+
+            return ReturnValue;
         }
 
         public LessonDetail GetLessonById(int lessonId)
         {
-            throw new NotImplementedException();
+           if(lessonId != 1)
+            {
+                throw new Exception();
+            }
+
+            return new LessonDetail();
         }
 
         public ICollection<LessonListItem> GetLessons()

@@ -30,7 +30,8 @@ namespace SiliconIndy.WebMvc
                       "~/Content/css/font-awesome.css",
                       "~/Content/css/PagedList.css",
                       "~/Content/css/styles.css",
-                      "~/Content/css/site.css"));
+                      "~/Content/css/site.css"
+                      ));
         }
     }
 }
