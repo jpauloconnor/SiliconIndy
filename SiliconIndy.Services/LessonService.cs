@@ -77,8 +77,11 @@ namespace SiliconIndy.Services
                             e => new LessonListItem()
                             {
                                 LessonId = e.LessonId,
-                                Title = e.Title
-                                
+                                Title = e.Title,
+                                Content = e.Content,
+                                JavaScript = e.JavaScript,
+                                HTML = e.HTML,
+                                CSharp = e.CSharp
                             });
 
                 var lessonList = lessons.ToList();
@@ -120,10 +123,61 @@ namespace SiliconIndy.Services
                         LessonId = lesson.LessonId,
                         Title = lesson.Title,
                         Content = lesson.Content,
+                        CSharp = lesson.CSharp,
+                        JavaScript = lesson.JavaScript,
+                        HTML = lesson.HTML,
                         Comments = commentService.GetAllCommentsByLessonId(id)
                     };
             }
         }
+
+        public bool GetLessonByType(LessonCreate model)
+        {
+            bool CSharp = false;
+            bool JS = false;
+            bool HTML = false;
+
+            foreach (var item in model.CheckBoxItems)
+            {
+                switch (item.LessonType)
+                {
+                    case LessonTypeModel.LessonType.CSharp:
+                        if (item.IsSelected)
+                            CSharp = true;
+                        break;
+                    case LessonTypeModel.LessonType.HTML:
+                        if (item.IsSelected)
+                            HTML = true;
+                        break;
+                    case LessonTypeModel.LessonType.JavaScript:
+                        if (item.IsSelected)
+                            JS = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            var entity =
+                new Lesson()
+                {
+                    Title = model.Title,
+                    OwnerId = _ownerId,
+                    CSharp = CSharp,
+                    HTML = HTML,
+                    JavaScript = JS,
+                    Content = model.Content,
+                    CreatedUtc = DateTimeOffset.Now
+                };
+
+            using (var context = new ApplicationDbContext())
+            {
+                context.Lessons.Add(entity);
+                return context.SaveChanges() == 1;
+            }
+        }
+
+
 
         public bool UpdateLesson(LessonEdit model)
         {

@@ -231,12 +231,17 @@
     <Content Include="Content\css\PagedList.css" />
     <Content Include="Content\css\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\1.png" />
     <Content Include="Content\img\indy-canal-day.jpg" />
     <Content Include="Content\img\indy-circle-night-2.jpg" />
     <Content Include="Content\img\indy-circle-night.jpg" />
     <Content Include="Content\img\indy-night-canal.jpg" />
     <Content Include="Content\img\indy-oil-flag.jpg" />
     <Content Include="Content\img\indy-orange.jpg" />
+    <Content Include="Content\2.png" />
+    <Content Include="Content\javascript-logo.png" />
+    <Content Include="Content\main-book.png" />
+    <Content Include="Content\3.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -650,6 +655,7 @@
     <Content Include="Scripts\CodeMirror\theme\xq-light.css" />
     <Content Include="Scripts\CodeMirror\theme\yeti.css" />
     <Content Include="Scripts\CodeMirror\theme\zenburn.css" />
+    <Content Include="Scripts\comment-form.js" />
     <Content Include="Scripts\cs101-simulation.js" />
     <Content Include="Scripts\cs101-table.js" />
     <Content Include="Scripts\cs101.js" />
