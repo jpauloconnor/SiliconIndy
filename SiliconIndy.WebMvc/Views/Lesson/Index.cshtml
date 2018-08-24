@@ -10,46 +10,82 @@
     <div class="container">
         <div class="row display-section">
             <div class="col-md-12">
-                <h1>All Lessons</h1>
-
-                <p>
-                    @Html.ActionLink("Add Lesson", "Create")
-                </p>
+                <h1>Lesson List</h1>
             </div>
         </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="container">
-        <row>
-            <div class="col-md-12">
-                <ul>
-                    @foreach (var item in Model)
-                    {
-                        <li class="comment-list">
-                            <h2>
-                                @Html.ActionLink(item.Title, "Details", new { id = item.LessonId })
-                            </h2>
-                            @if (item.CommentCount == 1)
-                            {
-                                <p>
-                                    @Html.DisplayFor(modelItem => item.CommentCount) Comment
-                                </p>
-                            }
-                            else
-                            {
-                                <p>
-                                    @Html.DisplayFor(modelItem => item.CommentCount) Comments
-                                </p>
-                            }
-                            <div class="clearfix"></div>
-                        </li>
-                    }
-                </ul>
-            </div>
-        </row>
+
+
+<div class="container">
+    <div class="well well-sm">
+        <div class="btn-group">
+            <a href="#" id="list" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-th-list"></span>List View
+            </a>
+            <a href="#" id="grid" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-th"></span>Grid View
+            </a>
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Add Lesson", "Create")
+            }
+        </div>
+    </div>
+
+
+
+    <div id="products" class="row list-group">
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li class="item  col-xs-4 col-lg-4">
+                    <div class="thumbnail">
+                        <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                        <div class="caption">
+                            <h4 class="group inner list-group-item-heading">
+                                @item.Title
+                            </h4>
+                            <p class="group inner list-group-item-text">
+                                Lesson description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            </p>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead"></p>
+                                    @if (item.CommentCount == 1)
+                                    {
+                                        <p>
+                                            @Html.DisplayFor(modelItem => item.CommentCount) Comment
+                                        </p>
+                                    }
+                                    else
+                                    {
+                                        <p>
+                                            @Html.DisplayFor(modelItem => item.CommentCount) Comments
+                                        </p>
+                                    }
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <a class="btn btn-success" onclick="location.href='@Url.Action("Details", "Lesson", new { id = item.LessonId })'">View Lesson Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
     </div>
 </div>
 
+@section scripts{
+    <script type="text/javascript">
 
+        $(document).ready(function () {
+            $('#list').click(function (event) { event.preventDefault(); $('#products .item').addClass('list-group-item'); });
+            $('#grid').click(function (event) { event.preventDefault(); $('#products .item').removeClass('list-group-item'); $('#products .item').addClass('grid-group-item'); });
+        });
+    </script>
+}
