@@ -48,8 +48,9 @@
                                 @item.Title
                             </h4>
                             <p class="group inner list-group-item-text">
-                                Lesson description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                @item.Content
+                                @*Lesson description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.*@
                             </p>
                             <div class="row">
                                 <div class="col-xs-12 col-md-6">
@@ -82,6 +83,11 @@
 
 @section scripts{
     <script type="text/javascript">
+
+
+        var x = 7;
+        console.log(x);
+
 
         $(document).ready(function () {
             $('#list').click(function (event) { event.preventDefault(); $('#products .item').addClass('list-group-item'); });

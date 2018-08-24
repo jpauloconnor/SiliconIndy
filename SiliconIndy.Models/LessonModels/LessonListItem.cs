@@ -11,10 +11,12 @@ namespace SiliconIndy.Models.LessonModels
     public class LessonListItem
     {
         public int LessonId { get; set; }
-
         public string Title { get; set; }
-
+        public string Content { get; set; }
         public int CommentCount { get; set; }
+        public bool JavaScript { get; set; }
+        public bool CSharp { get; set; }
+        public bool HTML { get; set; }
 
         public DateTimeOffset CreatedUtc { get; set; }
     }

@@ -41,7 +41,6 @@ namespace SiliconIndy.WebMvc.Controllers
         #endregion
 
         #region Roles Methods
-
         public ActionResult RoleIndex()
         {
             var svc = CreateAdminService();
@@ -86,7 +85,6 @@ namespace SiliconIndy.WebMvc.Controllers
         {
             return View();
         }
-
 
         private AdminService CreateAdminService()
         {
