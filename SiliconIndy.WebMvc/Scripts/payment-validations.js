@@ -1,4 +1,7 @@
-﻿jQuery(function ($) {
+﻿
+
+
+jQuery(function ($) {
     $('.cc-number').payment('formatCardNumber');
 
     $('.cc-number').bind('change paste blur', function (e) {

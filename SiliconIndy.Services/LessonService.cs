@@ -11,6 +11,8 @@ namespace SiliconIndy.Services
 {
     public class LessonService : ILessonService
     {
+
+        //TODO: Think about doing this....
         private readonly Guid _ownerId;
 
         public LessonService() { }
@@ -94,6 +96,35 @@ namespace SiliconIndy.Services
                 }
 
                 return lessonList;
+            }
+        }
+
+        public Queue<LessonListItem> GetLessonQueue()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var lessons =
+                   ctx
+                       .Lessons
+                       .Select(
+                           e => new LessonListItem()
+                           {
+                               LessonId = e.LessonId,
+                               Title = e.Title,
+                               Content = e.Content,
+                               JavaScript = e.JavaScript,
+                               HTML = e.HTML,
+                               CSharp = e.CSharp
+                           });
+
+                var lessonQueue = new Queue<LessonListItem>();
+
+                foreach(var lesson in lessons)
+                {
+                    lessonQueue.Enqueue(lesson);
+                }
+
+                return lessonQueue;
             }
         }
 
