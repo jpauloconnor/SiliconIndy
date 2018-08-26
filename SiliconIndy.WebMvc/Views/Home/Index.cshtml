@@ -32,8 +32,9 @@
     <div>
         <div class="bg-color">
             <div class="container">
+                <h2 class="text-dec">Welcome @User.Identity.Name</h2>
+
                 <div class="row">
-                    <h2 class="text-dec">Welcome @User.Identity.Name</h2>
                     <button class="btn btn-default">@Html.ActionLink("Lesson", "Index", "Lesson")</button>
                 </div>
             </div>
@@ -41,16 +42,17 @@
     </div>
 }
 
+
+
 <!--Banner-->
 @if (User.IsInRole("Admin"))
 {
     <div>
         <div class="bg-color">
             <div class="container">
+                <h2 class="text-dec">Welcome @User.Identity.Name</h2>
+
                 <div class="row">
-                    <h2 class="text-dec">Welcome @User.Identity.Name</h2>
-
-
                     <button class="btn btn-default">@Html.ActionLink("Lesson", "Index", "Lesson")</button>
                 </div>
             </div>

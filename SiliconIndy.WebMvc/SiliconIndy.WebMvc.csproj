@@ -212,6 +212,7 @@
     <Compile Include="Controllers\LessonController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ChargeController.cs" />
+    <Compile Include="Controllers\SlideController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -242,6 +243,7 @@
     <Content Include="Content\javascript-logo.png" />
     <Content Include="Content\main-book.png" />
     <Content Include="Content\3.png" />
+    <Content Include="Content\Todos\TextFile1.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -729,6 +731,8 @@
     <Content Include="Views\Charge\Custom.cshtml" />
     <Content Include="Views\Charge\Confirmation.cshtml" />
     <Content Include="Views\Lesson\GetRandomLesson.cshtml" />
+    <Content Include="Views\Slide\Create.cshtml" />
+    <Content Include="Views\Slide\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

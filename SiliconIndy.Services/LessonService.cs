@@ -99,34 +99,7 @@ namespace SiliconIndy.Services
             }
         }
 
-        public Queue<LessonListItem> GetLessonQueue()
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var lessons =
-                   ctx
-                       .Lessons
-                       .Select(
-                           e => new LessonListItem()
-                           {
-                               LessonId = e.LessonId,
-                               Title = e.Title,
-                               Content = e.Content,
-                               JavaScript = e.JavaScript,
-                               HTML = e.HTML,
-                               CSharp = e.CSharp
-                           });
-
-                var lessonQueue = new Queue<LessonListItem>();
-
-                foreach(var lesson in lessons)
-                {
-                    lessonQueue.Enqueue(lesson);
-                }
-
-                return lessonQueue;
-            }
-        }
+        
 
         public LessonDetail GetRandomLessonFromList()
         {
@@ -144,7 +117,6 @@ namespace SiliconIndy.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-
                 var lesson = GetLesson(ctx, id);
                 var commentService = new CommentService(_ownerId, id);
 
@@ -208,20 +180,14 @@ namespace SiliconIndy.Services
             }
         }
 
-
-
         public bool UpdateLesson(LessonEdit model)
         {
             throw new NotImplementedException();
         }
-
-
         public bool DeleteLesson(int lessonId)
         {
             throw new NotImplementedException();
         }
-
-
         private Lesson GetLesson(ApplicationDbContext context, int id)
         {
             using (context)

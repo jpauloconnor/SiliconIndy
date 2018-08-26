@@ -19,3 +19,15 @@ Lesson -> Lesson Group
 16. Queue method in controller.... Add to queue.....
 17 Store order by storing an int for that lesson in it's group....
 18 Should have a list that will show the Queue order. 
+
+
+Wait,  I need a Slideshow Class....
+
+
+Lesson         SlideShow
+  Lesson ID     SlideShowID 
+				GroupName		
+				LessonID
+				QueueSpot
+
+				 Lesson Lesson ---To access the lesson type on the table
