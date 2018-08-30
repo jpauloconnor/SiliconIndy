@@ -44,6 +44,10 @@ namespace SiliconIndy.WebMvc.Controllers
 
         public ActionResult Create()
         {
+            var svc = new LessonService();
+            var lessons = svc.GetLessons();
+            ViewBag.LessonId = new SelectList(lessons, "LessonId", "Title");
+
             return View();
         }
 
@@ -55,16 +59,46 @@ namespace SiliconIndy.WebMvc.Controllers
             {
                 return View(model);
             }
+ 
 
-            var svc = CreateSlideDeckService();
+            var slideSvc = CreateSlideDeckService();
 
-            if (svc.CreateSlide(model))
+            if (slideSvc.CreateSlide(model))
             {
                 TempData["Save Result"] = "New slide deck added.";
                 return RedirectToAction("Index");
             };
 
             return View(model);
+        }
+
+        public ActionResult PlayLists()
+        {
+            var service = CreateSlideDeckService();
+            var model = service.GetUniqueDeckNames();
+            return View(model);
+        }
+
+        public ActionResult PlayList(string deckName)
+        {
+            var service = CreateSlideDeckService();
+            var model = service.GetQueueByDeckname(deckName);
+            model = model.OrderByDescending(c => c.QueueSpot).Reverse();
+
+            return View(model);
+        }
+
+        public ActionResult PlayListStart(string deckName)
+        {
+            var service = CreateSlideDeckService();
+            var model = service.StartPlayList(deckName);
+            return View(model);
+        }
+
+
+        public ActionResult Play(string deckName, int lessonId)
+        {
+            return RedirectToAction("Details", "Lesson", new { id = lessonId});
         }
 
         private SlideDeckService CreateSlideDeckService()

@@ -733,6 +733,8 @@
     <Content Include="Views\Lesson\GetRandomLesson.cshtml" />
     <Content Include="Views\Slide\Create.cshtml" />
     <Content Include="Views\Slide\Index.cshtml" />
+    <Content Include="Views\Slide\PlayLists.cshtml" />
+    <Content Include="Views\Slide\PlayList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
