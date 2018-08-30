@@ -2,11 +2,24 @@
 
 <h1>Welcome @User.Identity.Name</h1>
 @{
-    
+
     ViewBag.Title = "Admin Page";
 }
 
 <h2>Admin</h2>
 
-<p>Here is the admin page. What would you like to do?</p>
-<p>TODO: List of links here.</p>
+<!--Banner-->
+@if (User.IsInRole("Admin"))
+{
+    <div>
+        <div class="bg-color">
+            <div class="container">
+                <div class="row">
+                    <h2 class="text-dec">Welcome @User.Identity.Name</h2>
+                    <button class="btn btn-default">@Html.ActionLink("Lesson", "Index", "Lesson")</button>
+                    <button class="btn btn-default">@Html.ActionLink("Action", "Playlists", "Slide")</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

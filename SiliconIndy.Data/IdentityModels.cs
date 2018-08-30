@@ -36,6 +36,8 @@ namespace SiliconIndy.Data
         public DbSet<Lesson> Lessons { get; set; }
         public DbSet<LessonData> LessonDataTypes { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<Slide> Slides { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

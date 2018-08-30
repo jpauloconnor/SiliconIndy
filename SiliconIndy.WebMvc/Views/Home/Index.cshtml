@@ -2,6 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 
+
 <!--Banner-->
 @if (!User.Identity.IsAuthenticated)
 {
@@ -14,7 +15,7 @@
                             <h2 class="text-dec">Silicon Indy</h2>
                         </div>
                         <div class="intro-para text-center quote">
-                            <p class="big-text">Bootcamp Pr</p>
+                            <p class="big-text">Bootcamp Prep</p>
                             <p class="small-text">“The only true wisdom is in knowing you know nothing.”<br>-Socrates</p>
                             <button class="btn btn-default">@Html.ActionLink("Log in", "Login", "Account")</button>
                         </div>
@@ -27,33 +28,49 @@
 }
 
 
-@if (User.Identity.IsAuthenticated)
-{
-    <div>
-        <div class="bg-color">
-            <div class="container">
-                <div class="row">
-                    <h2 class="text-dec">Welcome @User.Identity.Name</h2>
-                    <button class="btn btn-default">@Html.ActionLink("Lesson", "Index", "Lesson")</button>
-                </div>
-            </div>
-        </div>
-    </div>
-}
-
 <!--Banner-->
 @if (User.IsInRole("Admin"))
 {
     <div>
         <div class="bg-color">
             <div class="container">
+                <h2 class="text-dec">Welcome @User.Identity.Name</h2>
+
                 <div class="row">
-                    <h2 class="text-dec">Welcome @User.Identity.Name</h2>
+                    <button class="btn btn-default">@Html.ActionLink("Lesson", "Index", "Lesson")</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-default">@Html.ActionLink("Create a Lesson", "Create", "Lesson")</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-default">@Html.ActionLink("Create a Playlist", "Create", "Slide")</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-default">@Html.ActionLink("Create a Slide", "Create", "Slide")</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-default">@Html.ActionLink("See List of Playlists", "Playlists", "Slide")</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
 
 
+@if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
+{
+    <div>
+        <div class="bg-color">
+            <div class="container">
+                <h2 class="text-dec">Welcome @User.Identity.Name</h2>
+
+                <div class="row">
                     <button class="btn btn-default">@Html.ActionLink("Lesson", "Index", "Lesson")</button>
                 </div>
             </div>
         </div>
     </div>
 }
+
+

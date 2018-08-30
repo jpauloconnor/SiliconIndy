@@ -11,6 +11,8 @@ namespace SiliconIndy.Services
 {
     public class LessonService : ILessonService
     {
+
+        //TODO: Think about doing this....
         private readonly Guid _ownerId;
 
         public LessonService() { }
@@ -97,6 +99,8 @@ namespace SiliconIndy.Services
             }
         }
 
+        
+
         public LessonDetail GetRandomLessonFromList()
         {
             var lessonList = GetLessons();
@@ -113,7 +117,6 @@ namespace SiliconIndy.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-
                 var lesson = GetLesson(ctx, id);
                 var commentService = new CommentService(_ownerId, id);
 
@@ -177,20 +180,14 @@ namespace SiliconIndy.Services
             }
         }
 
-
-
         public bool UpdateLesson(LessonEdit model)
         {
             throw new NotImplementedException();
         }
-
-
         public bool DeleteLesson(int lessonId)
         {
             throw new NotImplementedException();
         }
-
-
         private Lesson GetLesson(ApplicationDbContext context, int id)
         {
             using (context)
