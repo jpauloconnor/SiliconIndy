@@ -59,7 +59,6 @@ namespace SiliconIndy.WebMvc.Controllers
             {
                 return View(model);
             }
- 
 
             var slideSvc = CreateSlideDeckService();
 

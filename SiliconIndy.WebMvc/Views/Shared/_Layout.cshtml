@@ -37,7 +37,8 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Lessons", "Index", "Lesson")</li>
-                        <li>@Html.ActionLink("Resources", "Index", "Resource")</li> //TODO:
+                        <li>@Html.ActionLink("Resources", "Index", "Resource")</li> 
+                        <li>@Html.ActionLink("Playlist", "Playlists", "Slide")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")

@@ -20,7 +20,7 @@
             @Html.DisplayFor(modelItem => item.DeckName)
         </td>
         <td>
-            @Html.ActionLink("See Playlist", "Playlist", new { deckName = item.DeckName })
+            @Html.ActionLink("See Playlist", "Playlist", new { deckName = item.DeckName }) |
             @Html.ActionLink("Details", "Details", new { id = item.DeckName }) |
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>

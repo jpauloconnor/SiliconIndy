@@ -22,6 +22,9 @@ namespace SiliconIndy.Data
         public string UserName { get; set; }
 
         [Required]
+        public string Title { get; set; }
+
+        [Required]
         public string CommentText { get; set; }
 
         [Required]

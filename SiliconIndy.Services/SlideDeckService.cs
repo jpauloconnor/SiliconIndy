@@ -36,9 +36,6 @@ namespace SiliconIndy.Services
             }
         }
 
-
-        
-
         public Slide StartPlayList(string deckName)
         {
             using(var ctx = new ApplicationDbContext())
@@ -54,22 +51,6 @@ namespace SiliconIndy.Services
             }
         }
 
-        //public Lesson GetLessonIDForPlaylist(SlideQueueItem slideQueueItem)
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var query = ctx.Lessons
-        //            .Where(x => x.LessonId == slideQueueItem.LessonId)
-        //            .Select(x => new Lesson
-        //            {
-        //                Title = slideQueueItem.Title
-        //            });
-
-        //    }
-        //}
-
-
-        //All slides
         public IEnumerable<SlideQueueItem> GetSlideQueue()
         {
             using (var ctx = new ApplicationDbContext())
@@ -235,19 +216,6 @@ namespace SiliconIndy.Services
             return post.QueueSpot;
         }
 
-
-
-        //private Slide GetFirstQueueItemInDeck(ApplicationDbContext context, string deckName)
-        //{
-        //    using (context)
-        //    {
-        //        return
-        //            context
-        //                .Slides
-        //                .SingleOrDefault(e => e.DeckName == deckName && e.QueueSpot == 1);
-        //    }
-        //}
-
         private Slide GetQueueItem(ApplicationDbContext context, string deckName)
         {
             using (context)
@@ -270,7 +238,5 @@ namespace SiliconIndy.Services
                 return entity.QueueSpot;
             }
         }
-
-
     }
 }

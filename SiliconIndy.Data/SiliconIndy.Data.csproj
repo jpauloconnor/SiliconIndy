@@ -107,6 +107,10 @@
     <Compile Include="Migrations\201808250423121_slidedatachange.Designer.cs">
       <DependentUpon>201808250423121_slidedatachange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808312338326_commenttitle.cs" />
+    <Compile Include="Migrations\201808312338326_commenttitle.Designer.cs">
+      <DependentUpon>201808312338326_commenttitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808250423121_slidedatachange.resx">
       <DependentUpon>201808250423121_slidedatachange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808312338326_commenttitle.resx">
+      <DependentUpon>201808312338326_commenttitle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

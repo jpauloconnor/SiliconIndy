@@ -39,65 +39,44 @@
     </div>
 </div>
 
-<div class="content">
-    <div class="comments">
-        <div class="editor">
-            <div class="editor-header">
-                <a href='#' data-role='bold'>B</a>
-                <a href='#' data-role='italic'>I</a>
-                <a href='#' data-role='underline'>U</a>
-                <a href='#' data-role='justifyleft'><i class="menu-left"></i></a>
-                <a href='#' data-role='justifycenter'><i class="menu-center"></i></a>
-                <a href='#' data-role='justifyright'><i class="menu-right"></i></a>
-            </div>
-            <div id="text" class="editor-content" contenteditable>
-                <p>Let's make a statement!</p>
-                <p>This is an italicised sentence.</p>
-                <p>Very important information.</p>
-            </div>
-        </div>
-        <div class="insert-text">
-            <span class="loading">Loading...</span>
-            <span class="total-comment"></span>
-            <p>
-                <input type="submit" value="Comment" />
-            </p>
-        </div>
-        <div class="list-comments">
-            <div>Hello!</div>
-            <div>My name's Tuan Linh.</div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
+@foreach (var item in Model.Comments)
+{
     <div class="container">
-        @foreach (var item in Model.Comments)
-        {
-            <div class="row review">
-                <div class="col-md-12">
-                    <h2>
-                        @Html.DisplayFor(modelItem => item.UserName)
-                    </h2>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.CommentText)
-                    </p>
-
-                    @if (User.Identity.GetUserId() == item.UserId.ToString())
-                    {
-                        @Html.ActionLink("Edit", "Edit", "Comment", new { id = item.CommentId }, null)
-                        @Html.ActionLink("Delete", "Delete", "Comment", new { id = item.CommentId }, null)
-                    }
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>@Html.DisplayFor(modelItem => item.UserName)</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+                <div class="thumbnail">
+                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
                 </div>
             </div>
-        }
+            <div class="col-sm-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong> @Html.DisplayFor(modelItem => item.Title)</strong> <span class="text-muted">commented @Html.DisplayFor(modelItem => item.CreatedDate)</span>
+                    </div>
+                    <div class="panel-body">
+                        @Html.DisplayFor(modelItem => item.CommentText)
+                    </div>
+                    <div>
+                        @if (User.Identity.GetUserId() == item.UserId.ToString())
+                        {
+                            @Html.ActionLink("Edit", "Edit", "Comment", new { id = item.CommentId }, null)
+                            @Html.ActionLink("Delete", "Delete", "Comment", new { id = item.CommentId }, null)
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+}
+
 
 @section scripts{
 
-    <script src="~/Scripts/comment-form.js"></script>
-    
     <script>
         var editor = CodeMirror.fromTextArea(document.getElementById("code1-ex2"), {
             lineNumbers: true,
@@ -105,4 +84,4 @@
             matchBrackets: true
         });
     </script>
-    }
+}

@@ -16,6 +16,9 @@ namespace SiliconIndy.Models.CommentModels
         public int LessonId { get; set; }
 
         [Required]
+        public string Title { get; set; }
+
+        [Required]
         public string CommentText { get; set; }
     }
 }

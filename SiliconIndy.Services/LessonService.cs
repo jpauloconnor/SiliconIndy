@@ -11,8 +11,6 @@ namespace SiliconIndy.Services
 {
     public class LessonService : ILessonService
     {
-
-        //TODO: Think about doing this....
         private readonly Guid _ownerId;
 
         public LessonService() { }
@@ -99,19 +97,6 @@ namespace SiliconIndy.Services
             }
         }
 
-        
-
-        public LessonDetail GetRandomLessonFromList()
-        {
-            var lessonList = GetLessons();
-
-            Random randomLesson = new Random();
-            var lessonId = randomLesson.Next(lessonList.Count);
-
-            var lesson = GetLessonById(lessonId);
-
-            return lesson;
-        }
 
         public LessonDetail GetLessonById(int id)
         {
@@ -188,6 +173,23 @@ namespace SiliconIndy.Services
         {
             throw new NotImplementedException();
         }
+
+        //TODO: Use somehow.
+        //This was a demo method for a student in class
+        public LessonDetail GetRandomLessonFromList()
+        {
+            var lessonList = GetLessons();
+
+            Random randomLesson = new Random();
+            var lessonId = randomLesson.Next(lessonList.Count);
+
+            var lesson = GetLessonById(lessonId);
+
+            return lesson;
+        }
+
+
+
         private Lesson GetLesson(ApplicationDbContext context, int id)
         {
             using (context)

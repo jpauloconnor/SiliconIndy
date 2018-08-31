@@ -34,6 +34,7 @@ namespace SiliconIndy.Services
                {
                    UserId = _userId,
                    LessonId = _lessonId,
+                   Title = model.Title,
                    CommentText = model.CommentText,
                    CreatedDate = DateTimeOffset.UtcNow,
                    UserName = "TemporaryPlaceholderName" //TODO: Helper to get username
@@ -60,6 +61,7 @@ namespace SiliconIndy.Services
                     {
                         UserId = comment.UserId,
                         LessonId = comment.LessonId,
+                        Title = comment.Title,
                         CommentText = comment.CommentText,
                         CommentId = comment.CommentId,
                         UserName = comment.UserName,
@@ -82,6 +84,7 @@ namespace SiliconIndy.Services
                             {
                                 CommentId = e.CommentId,
                                 UserId = e.UserId,
+                                Title = e.Title,
                                 CommentText = e.CommentText,
                                 UserName = "Dude",
                                 CreatedDate = e.CreatedDate,
@@ -105,6 +108,7 @@ namespace SiliconIndy.Services
                             {
                                 CommentId = e.CommentId,
                                 UserId = e.UserId,
+                                Title = e.Title,
                                 CommentText = e.CommentText,
                                 CreatedDate = e.CreatedDate
 

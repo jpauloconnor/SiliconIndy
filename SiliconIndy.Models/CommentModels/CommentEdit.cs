@@ -16,6 +16,9 @@ namespace SiliconIndy.Models.CommentModels
         public Guid UserId { get; set; }
 
         [Required]
+        public string Title { get; set; }
+
+        [Required]
         public string CommentText { get; set; }
     }
 }
