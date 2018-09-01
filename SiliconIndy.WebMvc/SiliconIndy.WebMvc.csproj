@@ -207,15 +207,23 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CalendarController.cs" />
+    <Compile Include="Controllers\DocumentationController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ResourcesController.cs" />
+    <Compile Include="Controllers\ResultsController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LessonController.cs" />
+    <Compile Include="Controllers\MailboxController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ChargeController.cs" />
     <Compile Include="Controllers\SlideController.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HTMLHelperExtensions.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -748,9 +756,25 @@
     <Content Include="Views\Slide\Index.cshtml" />
     <Content Include="Views\Slide\PlayLists.cshtml" />
     <Content Include="Views\Slide\PlayList.cshtml" />
+    <Content Include="Views\Shared\_Aside.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_LayoutCollapse.cshtml" />
+    <Content Include="Views\Shared\_LayoutFixed.cshtml" />
+    <Content Include="Views\Shared\_LayoutTop.cshtml" />
+    <Content Include="Views\Shared\_Sidebar.cshtml" />
+    <Content Include="Views\Results\Individual.cshtml" />
+    <Content Include="Views\Results\AllUsers.cshtml" />
+    <Content Include="Views\Chat\Index.cshtml" />
+    <Content Include="Views\Lesson\LessonChoices.cshtml" />
+    <Content Include="Views\Profile\PageProfile.cshtml" />
+    <Content Include="Views\Documentation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Calendar\" />
+    <Folder Include="Views\Mailbox\" />
+    <Folder Include="Views\Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
