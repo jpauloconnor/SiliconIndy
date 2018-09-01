@@ -27,6 +27,14 @@ namespace SiliconIndy.WebMvc.Controllers
         }
 
         [AllowAnonymous]
+        public ActionResult LessonChoices()
+        {
+            var lessons = LessonService.GetLessons();
+            return View(lessons);
+        }
+
+
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var lessons = LessonService.GetLessons();

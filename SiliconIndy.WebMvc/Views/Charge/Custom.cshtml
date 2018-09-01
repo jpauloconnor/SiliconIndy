@@ -4,112 +4,116 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Book (custom)</h2>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <h4 class="text-center"><span class="label label-info">Self Published</span></h4>
-                <img src="~/Content/images/main-book.png" />
-                <div class="caption">
-                    <div class="row">
-                        <div class="col-md-6 col-xs-6">
-                            <h3>Book Title Here</h3>
-                            <p>Description: how I quit my job and changed careers.</p>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+    <h2>Book (custom)</h2>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <h4 class="text-center"><span class="label label-info">Self Published</span></h4>
+                    <img src="~/Content/images/main-book.png" />
+                    <div class="caption">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6">
+                                <h3>Book Title Here</h3>
+                                <p>Description: how I quit my job and changed careers.</p>
+                            </div>
+                            <div class="col-md-6 col-xs-6 price">
+                                <h3>
+                                    <label>$19</label>
+                                </h3>
+                            </div>
                         </div>
-                        <div class="col-md-6 col-xs-6 price">
-                            <h3>
-                                <label>$19</label>
-                            </h3>
+                        <p>C# Fundamentals</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a class="btn btn-primary btn-product"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
+                            </div>
+                            <div class="col-md-6">
+                                <button id="pay-button" type="submit" class="btn btn-success  btn-product"><span class="glyphicon glyphicon-shopping-cart"></span> Pay with Card</button>
+                            </div>
                         </div>
+                        <p> </p>
                     </div>
-                    <p>C# Fundamentals</p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a class="btn btn-primary btn-product"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
-                        </div>
-                        <div class="col-md-6">
-                            <button id="pay-button" type="submit" class="btn btn-success  btn-product"><span class="glyphicon glyphicon-shopping-cart"></span> Pay with Card</button>
-                        </div>
-                    </div>
-                    <p> </p>
                 </div>
             </div>
-        </div>
 
-        <div id="payment-form-container" class="col-md-6 well @Model.PaymentFormHiddenCss">
+            <div id="payment-form-container" class="col-md-6 well @Model.PaymentFormHiddenCss">
 
-            @using (Html.BeginForm("Custom", "Charge", FormMethod.Post, new { id = "payment-form", @class = "cardInfo", accept_charset = "UTF-8", novalidate = "", autocomplete = "on" }))
-            {
-                @Html.AntiForgeryToken()
+                @using (Html.BeginForm("Custom", "Charge", FormMethod.Post, new { id = "payment-form", @class = "cardInfo", accept_charset = "UTF-8", novalidate = "", autocomplete = "on" }))
+                {
+                    @Html.AntiForgeryToken()
 
-                <div class="form-group">
-                    <label class="control-label">Accepted</label>
-                    <div class="row">
-                        <div class="col-md-10 card-images">
-                            <img src="~/Content/images/creditcards/visa.png" alt="visa" />
-                            <img src="~/Content/images/creditcards/mastercard.png" alt="mastercard" />
-                            <img src="~/Content/images/creditcards/amex.png" alt="amex" />
-                            <img src="~/Content/images/creditcards/discover.png" alt="discover" />
+                    <div class="form-group">
+                        <label class="control-label">Accepted</label>
+                        <div class="row">
+                            <div class="col-md-10 card-images">
+                                <img src="~/Content/images/creditcards/visa.png" alt="visa" />
+                                <img src="~/Content/images/creditcards/mastercard.png" alt="mastercard" />
+                                <img src="~/Content/images/creditcards/amex.png" alt="amex" />
+                                <img src="~/Content/images/creditcards/discover.png" alt="discover" />
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label for="cc-number" class="control-label">Card Number</label>
-                    <div class="input-group col-md-6">
+                    <div class="form-group">
+                        <label for="cc-number" class="control-label">Card Number</label>
+                        <div class="input-group col-md-6">
 
-                        <input id="cc-number" data-stripe="number" type="tel" class="input-lg form-control cc-number" autocomplete="cc-number" placeholder="•••• •••• •••• ••••" required autofocus>
-                        <span class="glyphicon glyphicon-credit-card glyphicon-align-right form-control-feedback" aria-hidden="true"></span>
+                            <input id="cc-number" data-stripe="number" type="tel" class="input-lg form-control cc-number" autocomplete="cc-number" placeholder="•••• •••• •••• ••••" required autofocus>
+                            <span class="glyphicon glyphicon-credit-card glyphicon-align-right form-control-feedback" aria-hidden="true"></span>
+                        </div>
+
                     </div>
 
-                </div>
+                    <div class="row">
 
-                <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="cc-exp" class="control-label">Expires</label>
+                            <input id="cc-exp" data-stripe="exp" type="tel" class="input-lg form-control cc-exp" placeholder="MM / YY" required>
+                        </div>
 
-                    <div class="form-group col-md-4">
-                        <label for="cc-exp" class="control-label">Expires</label>
-                        <input id="cc-exp" data-stripe="exp" type="tel" class="input-lg form-control cc-exp" placeholder="MM / YY" required>
+                        <div class="form-group col-md-3 ">
+                            <label for="cc-cvc" class="control-label">CVC</label>
+                            <input id="cc-cvc" data-stripe="cvc" type="tel" class="input-lg form-control cc-cvc" autocomplete="off" placeholder="•••" required>
+                            <span class="glyphicon glyphicon-lock  form-control-feedback" aria-hidden="true"></span>
+                        </div>
+
                     </div>
 
-                    <div class="form-group col-md-3 ">
-                        <label for="cc-cvc" class="control-label">CVC</label>
-                        <input id="cc-cvc" data-stripe="cvc" type="tel" class="input-lg form-control cc-cvc" autocomplete="off" placeholder="•••" required>
-                        <span class="glyphicon glyphicon-lock  form-control-feedback" aria-hidden="true"></span>
+                    <div class="form-group">
+                        <label for="email" class="control-label">Email</label>
+                        <div class="input-group col-md-6">
+
+                            <input id="email" type="email" name="stripeEmail" value="@Model.StripeEmail" class="input-lg form-control email" placeholder="Email" required>
+                            <span class="glyphicon glyphicon-envelope glyphicon-align-right form-control-feedback" aria-hidden="true"></span>
+                        </div>
+
                     </div>
 
-                </div>
+                    @Html.HiddenFor(m => m.StripePublishableKey)
+                    @Html.ValidationSummary(true, "There was an error. ", new { @class = "alert alert-danger" })
 
-                <div class="form-group">
-                    <label for="email" class="control-label">Email</label>
-                    <div class="input-group col-md-6">
-
-                        <input id="email" type="email" name="stripeEmail" value="@Model.StripeEmail" class="input-lg form-control email" placeholder="Email" required>
-                        <span class="glyphicon glyphicon-envelope glyphicon-align-right form-control-feedback" aria-hidden="true"></span>
+                    <div class="row">
+                        <div class="form-group col-md-6  ">
+                            <button type="submit" class="btn btn-success  btn-product"><span class="glyphicon glyphicon-shopping-cart"></span> Buy</button>
+                        </div>
                     </div>
 
-                </div>
+                    <h3 class="validation"></h3>
+                    <p class="alert alert-danger payment-errors" style="display:none; "></p>
+                }
 
-                @Html.HiddenFor(m => m.StripePublishableKey)
-                @Html.ValidationSummary(true, "There was an error. ", new { @class = "alert alert-danger" })
-
-                <div class="row">
-                    <div class="form-group col-md-6  ">
-                        <button type="submit" class="btn btn-success  btn-product"><span class="glyphicon glyphicon-shopping-cart"></span> Buy</button>
-                    </div>
-                </div>
-
-                <h3 class="validation"></h3>
-                <p class="alert alert-danger payment-errors" style="display:none; "></p>
-            }
+            </div>
 
         </div>
 
     </div>
-
 </div>
-
 
 @section scripts{
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>

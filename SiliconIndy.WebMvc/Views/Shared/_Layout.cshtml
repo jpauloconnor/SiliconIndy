@@ -2,15 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Silicon Indy</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>@ViewBag.Title - Silicon Indy - Learn To Code</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false)}
     <script src="~/Scripts/cs101.js"></script>
     <script src="~/Scripts/cs101-table.js"></script>
     <script src="~/Scripts/cs101-simulation.js"></script>
@@ -18,134 +17,25 @@
     <link href="~/Scripts/CodeMirror/lib/codemirror.css" rel="stylesheet" />
     <script src="~/Scripts/CodeMirror/mode/clike/clike.js"></script>
 </head>
-<body>
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top" id="navbarstuff">
-        <div class="container-fluid">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+<body class="hold-transition skin-blue sidebar-mini">
 
-            <div class="navbar-collapse collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Lessons", "Index", "Lesson")</li>
-                        <li>@Html.ActionLink("Resources", "Index", "Resource")</li> 
-                        <li>@Html.ActionLink("Playlist", "Playlists", "Slide")</li>
-                    }
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </nav>
+    <div class="wrapper">
 
-    @RenderBody()
-    <hr />
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Silicon Indy 2018</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+        @Html.Partial("_Header")
 
+        @Html.Partial("_Sidebar")
+
+        @RenderBody()
+
+        @Html.Partial("_Footer")
+
+        @Html.Partial("_Aside")
+
+        <div class="control-sidebar-bg"></div>
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/lib")
     @RenderSection("scripts", required: false)
-
-
-
 </body>
 </html>
-
-
-<body>
-
-    @*<!--Modal box-->
-    <div class="modal fade" id="login" role="dialog">
-        <div class="modal-dialog modal-sm">
-
-            <!-- Modal content no 1-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title text-center form-title">Login</h4>
-                </div>
-                <div class="modal-body padtrbl">
-
-                    <div class="login-box-body">
-                        <p class="login-box-msg">Sign in to start your session</p>
-                        <div class="form-group">
-                            <form name="" id="loginForm">
-                                <div class="form-group has-feedback">
-                                    <!----- username -------------->
-                                    <input class="form-control" placeholder="Username" id="loginid" type="text" autocomplete="off" />
-                                    <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span><!---Alredy exists  ! -->
-                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                                </div>
-                                <div class="form-group has-feedback">
-                                    <!----- password -------------->
-                                    <input class="form-control" placeholder="Password" id="loginpsw" type="password" autocomplete="off" />
-                                    <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span><!---Alredy exists  ! -->
-                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="checkbox icheck">
-                                            <label>
-                                                <input type="checkbox" id="loginrem"> Remember Me
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12">
-                                        <button type="button" class="btn btn-green btn-block btn-flat" onclick="userlogin()">Sign In</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!--/ Modal box-->*@
-
-
