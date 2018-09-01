@@ -228,9 +228,16 @@
     <Content Include="Content\codemirrorcsharp.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\Bundle.css">
+      <DependentUpon>Bundle.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Bundle.min.css">
+      <DependentUpon>Bundle.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\styles.css" />
     <Content Include="Content\css\PagedList.css" />
     <Content Include="Content\css\font-awesome.css" />
+    <None Include="Content\css\_globals.scss" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\1.png" />
     <Content Include="Content\img\indy-canal-day.jpg" />
@@ -671,6 +678,12 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\css\Bundle.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\css\_nav.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
