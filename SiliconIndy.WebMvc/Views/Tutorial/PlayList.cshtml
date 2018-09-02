@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SiliconIndy.Models.SlideModels.SlideQueueItem>
+
+@{
+    ViewBag.Title = "PlayList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            Walkthrough for
+            @Html.DisplayNameFor(model => model.DeckName)
+        </h1>
+
+        @if (User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("Add Lesson", "Create", "Lesson")
+        }
+
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Data tables</li>
+        </ol>
+    </section>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QueueSpot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QueueSpot)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.ActionLink("Watch Lesson", "Play", new { deckName = item.DeckName, lessonId = item.LessonId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

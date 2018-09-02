@@ -3,14 +3,16 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
-<div class="row">
-    <div class="container">
+<div class="content-wrapper">
+    <section class="content-header">
         <div class="row display-section">
             <div class="col-md-12">
                 <h1>Fix the Code for @Html.DisplayFor(model => model.Title)</h1>
-                <p style="max-width:1000">
+                <p style="max-width:2000">
                     <table class="run">
                         <tbody>
                             <tr>
@@ -26,7 +28,7 @@
                             </tr>
                         </tbody>
                     </table>
-                </p><p>
+                </p>
 
                     <br />
 
@@ -36,7 +38,7 @@
                 </p>
             </div>
         </div>
-    </div>
+    </section>
 </div>
 
 @foreach (var item in Model.Comments)

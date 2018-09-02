@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiliconIndy.WebMvc.UnitTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiliconIndy.WebApi", "SiliconIndy.WebApi\SiliconIndy.WebApi.csproj", "{9E0EFB5A-77D1-4C02-A90A-ABE0B639A18C}"
 EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "SiliconIndy.WebMvc.Azure", "SiliconIndy.WebMvc.Azure\SiliconIndy.WebMvc.Azure.ccproj", "{4827E0CB-2BEC-43DA-894C-CB04EDC9CA1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{9E0EFB5A-77D1-4C02-A90A-ABE0B639A18C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E0EFB5A-77D1-4C02-A90A-ABE0B639A18C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E0EFB5A-77D1-4C02-A90A-ABE0B639A18C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4827E0CB-2BEC-43DA-894C-CB04EDC9CA1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4827E0CB-2BEC-43DA-894C-CB04EDC9CA1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4827E0CB-2BEC-43DA-894C-CB04EDC9CA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4827E0CB-2BEC-43DA-894C-CB04EDC9CA1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

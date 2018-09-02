@@ -52,7 +52,28 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.7.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.7.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.7.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=8.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.8.0.1\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
     </Reference>
@@ -66,6 +87,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Spatial, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.7.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -209,16 +233,16 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\DocumentationController.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
-    <Compile Include="Controllers\ResourcesController.cs" />
+    <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Controllers\ResultsController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LessonController.cs" />
-    <Compile Include="Controllers\MailboxController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ChargeController.cs" />
-    <Compile Include="Controllers\SlideController.cs" />
+    <Compile Include="Controllers\TutorialController.cs" />
     <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -234,6 +258,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\codemirror.css" />
     <Content Include="Content\codemirrorcsharp.css" />
+    <Content Include="Content\css\blue.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\Bundle.css">
@@ -255,6 +280,7 @@
     <Content Include="Content\img\indy-oil-flag.jpg" />
     <Content Include="Content\img\indy-orange.jpg" />
     <Content Include="Content\2.png" />
+    <Content Include="Content\ionicons.min.css" />
     <Content Include="Content\javascript-logo.png" />
     <Content Include="Content\main-book.png" />
     <Content Include="Content\3.png" />
@@ -676,6 +702,8 @@
     <Content Include="Scripts\cs101-simulation.js" />
     <Content Include="Scripts\cs101-table.js" />
     <Content Include="Scripts\cs101.js" />
+    <Content Include="Scripts\.js" />
+    <Content Include="Scripts\icheck.min.js" />
     <Content Include="Scripts\jquery.payment.js" />
     <Content Include="Scripts\js\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -692,6 +720,7 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Content\css\_nav.scss" />
+    <None Include="Properties\PublishProfiles\CodeOath - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -752,10 +781,10 @@
     <Content Include="Views\Charge\Custom.cshtml" />
     <Content Include="Views\Charge\Confirmation.cshtml" />
     <Content Include="Views\Lesson\GetRandomLesson.cshtml" />
-    <Content Include="Views\Slide\Create.cshtml" />
-    <Content Include="Views\Slide\Index.cshtml" />
-    <Content Include="Views\Slide\PlayLists.cshtml" />
-    <Content Include="Views\Slide\PlayList.cshtml" />
+    <Content Include="Views\Tutorial\Create.cshtml" />
+    <Content Include="Views\Tutorial\Index.cshtml" />
+    <Content Include="Views\Tutorial\PlayLists.cshtml" />
+    <Content Include="Views\Tutorial\PlayList.cshtml" />
     <Content Include="Views\Shared\_Aside.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
@@ -766,14 +795,14 @@
     <Content Include="Views\Results\Individual.cshtml" />
     <Content Include="Views\Results\AllUsers.cshtml" />
     <Content Include="Views\Chat\Index.cshtml" />
-    <Content Include="Views\Lesson\LessonChoices.cshtml" />
+    <Content Include="Views\Lesson\MiniLessonChoices.cshtml" />
     <Content Include="Views\Profile\PageProfile.cshtml" />
     <Content Include="Views\Documentation\Index.cshtml" />
+    <Content Include="Views\Calendar\Index.cshtml" />
+    <Content Include="Views\Feedback\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Calendar\" />
-    <Folder Include="Views\Mailbox\" />
     <Folder Include="Views\Resources\" />
   </ItemGroup>
   <ItemGroup>

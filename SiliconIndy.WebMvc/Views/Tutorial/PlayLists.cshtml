@@ -1,0 +1,98 @@
+﻿@model IEnumerable<SiliconIndy.Models.SlideModels.SlideQueueItem>
+
+@{
+    ViewBag.Title = "AllPlayLists";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            Step by Step Tutorials
+        </h1>
+
+        @if (User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("Add Lesson", "Create", "Lesson")
+        }
+
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Data tables</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div id="lessons" class="row list-group">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">All Lessons</h3>
+                    </div>
+
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Lesson Title</th>
+                                    <th>Lesson Content</th>
+                                    <th>Number of Comments</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="group inner list-group-item-heading">
+                                            @item.QueueSpot
+                                        </td>
+                                        <td class="group inner list-group-item-text">
+                                            @item.DeckName
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-success" onclick="location.href='@Url.Action("Details", "Lesson", new { id = item.LessonId })'">See Details</a>
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("See Playlist", "Playlist", new { deckName = item.DeckName }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.DeckName }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.DeckName })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Content</th>
+                                    <th>Number of Comments</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example1').DataTable()
+            $('#example2').DataTable({
+                'paging': true,
+                'lengthChange': false,
+                'searching': false,
+                'ordering': true,
+                'info': true,
+                'autoWidth': false
+            })
+        })
+
+    </script>
+}
+
+
+

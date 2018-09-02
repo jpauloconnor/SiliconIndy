@@ -11,7 +11,7 @@ using PagedList;
 
 namespace SiliconIndy.WebMvc.Controllers
 {
-    public class SlideController : Controller
+    public class TutorialController : Controller
     {
         public ActionResult Index(string sortOrder, string searchString, string currentFilter, int? page)
         {

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace SiliconIndy.WebMvc.Controllers
 {
-    public class ResourcesController : Controller
+    public class ResourceController : Controller
     {
         // GET: Resources
         public ActionResult Index()
