@@ -14,7 +14,6 @@ namespace SiliconIndy.WebMvc.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
-        // GET: Admin
         public ActionResult Index()
         {
             var service = CreateAdminService();
@@ -25,7 +24,6 @@ namespace SiliconIndy.WebMvc.Controllers
             return RedirectToAction("Error");
         }
 
-        #region USER METHODS
         public ActionResult UserIndex()
         {
             var svc = CreateAdminService();
@@ -38,9 +36,6 @@ namespace SiliconIndy.WebMvc.Controllers
             return View(users);
         }
 
-        #endregion
-
-        #region Roles Methods
         public ActionResult RoleIndex()
         {
             var svc = CreateAdminService();
@@ -78,8 +73,6 @@ namespace SiliconIndy.WebMvc.Controllers
 
             return RedirectToAction("Index");
         }
-
-        #endregion
 
         public ActionResult Error()
         {
