@@ -89,5 +89,10 @@ namespace SiliconIndy.WebMvc.Controllers
             var lesson = service.GetRandomLessonFromList();
             return View(lesson);
         }
+
+        public ActionResult BusinessChallenges()
+        {
+            return View();
+        }
     }
 }

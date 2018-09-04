@@ -13,7 +13,8 @@
 
             <form action="#" method="get" class="sidebar-form">
                 <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search..."> <!--TODO: Search the entire site-->
+                    <input type="text" name="q" class="form-control" placeholder="Search..."> 
+                    <!--TODO: Search the entire site-->
                     <span class="input-group-btn">
                         <button type="submit" name="search" id="search-btn" class="btn btn-flat">
                             <i class="fa fa-search"></i>
@@ -32,10 +33,11 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
+                    <!--TODO: Add FULL STACK LESSONS-->
                     <ul class="treeview-menu">
                         <li class="@Html.IsSelected(action: "Dashboard")"><a href="@Url.Action("MiniLessonChoices", "Lesson")"><i class="fa fa-circle-o"></i>MiniLessons</a></li>
                         <li class="@Html.IsSelected(action: "Dashboard")"><a href="@Url.Action("Playlists", "Tutorial")"><i class="fa fa-circle-o"></i>Step by StepTutorials</a></li>
-                        <li class="@Html.IsSelected(action: "Dashboard")"><a href="@Url.Action("BusinessProblems", "Lesson")"><i class="fa fa-circle-o"></i>Business Problems</a></li>
+                        <li class="@Html.IsSelected(action: "Dashboard")"><a href="@Url.Action("BusinessChallenges", "Lesson")"><i class="fa fa-circle-o"></i>Business Problems</a></li>
                         <li class="@Html.IsSelected(action: "Dashboard")"><a href="@Url.Action("FullStack", "Lesson")"><i class="fa fa-circle-o"></i>Full Stack Applications</a></li>
                     </ul>
                 </li>
@@ -68,7 +70,6 @@
                         <li class="@Html.IsSelected(action: "Resource")"><a href="@Url.Action("JavaScript", "Resource")"><i class="fa fa-circle-o"></i> JS Resources</a></li>
                         <li class="@Html.IsSelected(action: "Resource")"><a href="@Url.Action("HTML5", "Resource")"><i class="fa fa-circle-o"></i> JS Resources</a></li>
                         <li class="@Html.IsSelected(action: "Resource")"><a href="@Url.Action("CSS", "Resource")"><i class="fa fa-circle-o"></i> CSS/SCSS</a></li>
-
                         <li class="@Html.IsSelected(action: "Resource")"><a href="@Url.Action("Git", "Resource")"><i class="fa fa-circle-o"></i>Git Resources</a></li>
                     </ul>
                 </li>
@@ -83,9 +84,9 @@
                     </a>
                 </li>
 
-                <li class="@Html.IsSelected(controller: "Mailbox")">
-                    <a href="@Url.Action("Compose", "Mailbox")">
-                        <i class="fa fa-envelope"></i> <span>Mailbox</span>
+                <li class="@Html.IsSelected(controller: "Feedback")">
+                    <a href="@Url.Action("Index", "Feedback")">
+                        <i class="fa fa-envelope"></i> <span>Feedbak</span>
                         <span class="pull-right-container">
                             <small class="label pull-right bg-yellow">12</small>
                             <small class="label pull-right bg-green">16</small>
@@ -111,10 +112,8 @@
                     </ul>
                 </li>
 
-
-
                 <li class="treeview @Html.IsSelected(controller: "Profile")">
-                    <a href="@Url.Action("Index", "Profile")">
+                    <a href="@Url.Action("PageProfile", "Profile")">
                         <i class="fa fa-folder"></i> <span>Profile</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
