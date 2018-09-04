@@ -49,7 +49,8 @@ namespace SiliconIndy.WebMvc
                 .Include(lteplugins + "input-mask/jquery.inputmask.extensions.js")
                 .Include(lteplugins + "timepicker/bootstrap-timepicker.min.js")
                 .Include(lteplugins + "iCheck/icheck.min.js")
-                .Include(ltecomponents + "fullcalendar/dist/fullcalendar.min.js"));
+                .Include(ltecomponents + "fullcalendar/dist/fullcalendar.min.js")
+                );
 
             bundles.Add(new ScriptBundle("~/bundles/dashboard1")
                 .Include(lte + "js/pages/dashboard.js"));

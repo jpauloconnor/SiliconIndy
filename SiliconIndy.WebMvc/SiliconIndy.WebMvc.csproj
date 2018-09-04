@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44372</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -35,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +45,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -323,9 +325,10 @@
     <Content Include="admin-lte\js\demo.js" />
     <Content Include="admin-lte\js\pages\dashboard.js" />
     <Content Include="admin-lte\js\pages\dashboard2.js" />
+    <Content Include="admin-lte\css\adminlte.min.css.map" />
+    <Content Include="admin-lte\css\adminlte.css.map" />
     <Content Include="Content\adminlte\css\AdminLTE.css" />
     <Content Include="Content\adminlte\css\AdminLTE.min.css" />
-    <Content Include="Content\adminlte\css\alt\AdminLTE-bootstrap-social.css" />
     <Content Include="Content\adminlte\css\alt\AdminLTE-bootstrap-social.css" />
     <Content Include="Content\adminlte\css\alt\AdminLTE-bootstrap-social.min.css" />
     <Content Include="Content\adminlte\css\alt\AdminLTE-fullcalendar.css" />
@@ -361,7 +364,6 @@
     <Content Include="Content\adminlte\css\skins\_all-skins.css" />
     <Content Include="Content\adminlte\css\skins\_all-skins.min.css" />
     <Content Include="Content\adminlte\img\avatar.png" />
-    <Content Include="Content\adminlte\img\avatar04.png" />
     <Content Include="Content\adminlte\img\avatar2.png" />
     <Content Include="Content\adminlte\img\avatar3.png" />
     <Content Include="Content\adminlte\img\avatar5.png" />
@@ -382,70 +384,10 @@
     <Content Include="Content\adminlte\img\photo4.jpg" />
     <Content Include="Content\adminlte\img\user1-128x128.jpg" />
     <Content Include="Content\adminlte\img\user2-160x160.jpg" />
-    <Content Include="Content\adminlte\img\user3-128x128.jpg" />
-    <Content Include="Content\adminlte\img\user4-128x128.jpg" />
-    <Content Include="Content\adminlte\img\user5-128x128.jpg" />
-    <Content Include="Content\adminlte\img\user6-128x128.jpg" />
-    <Content Include="Content\adminlte\img\user7-128x128.jpg" />
-    <Content Include="Content\adminlte\img\user8-128x128.jpg" />
-    <Content Include="Content\adminlte\css\codemirror.css" />
-    <Content Include="Content\adminlte\css\codemirrorcsharp.css" />
-    <Content Include="Content\old-css\blue.css" />
-    <Content Include="Content\old-css\bootstrap.css" />
-    <Content Include="Content\old-css\Bundle.css">
-      <DependentUpon>Bundle.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\old-css\Bundle.min.css">
-      <DependentUpon>Bundle.css</DependentUpon>
-    </Content>
-    <Content Include="Content\old-css\styles.css" />
-    <Content Include="Content\old-css\PagedList.css" />
-    <Content Include="Content\old-css\font-awesome.css" />
-    <Content Include="Content\adminlte\css\adminlte.css.map" />
-    <Content Include="Content\adminlte\css\adminlte.min.css.map" />
-    <Content Include="admin-lte\css\adminlte.min.css.map" />
-    <Content Include="admin-lte\css\adminlte.css.map" />
-    <None Include="Content\old-css\_globals.scss" />
-    <Content Include="Content\adminlte\css\font-awesome.min.css" />
-    <Content Include="Content\images\creditcards\amex.png" />
-    <Content Include="Content\images\creditcards\credit.png" />
-    <Content Include="Content\images\creditcards\dankort.png" />
-    <Content Include="Content\images\creditcards\diners.png" />
-    <Content Include="Content\images\creditcards\discover.png" />
-    <Content Include="Content\images\creditcards\forbru.png" />
-    <Content Include="Content\images\creditcards\google.png" />
-    <Content Include="Content\images\creditcards\jcb.png" />
-    <Content Include="Content\images\creditcards\laser.png" />
-    <Content Include="Content\images\creditcards\maestro.png" />
-    <Content Include="Content\images\creditcards\mastercard.png" />
-    <Content Include="Content\images\creditcards\money.png" />
-    <Content Include="Content\images\creditcards\paypa.png" />
-    <Content Include="Content\images\creditcards\shopify.png" />
-    <Content Include="Content\images\creditcards\solo.png" />
-    <Content Include="Content\images\creditcards\visa.png" />
-    <Content Include="Content\images\html-five-logo.png" />
-    <Content Include="Content\images\javascript-logo.png" />
-    <Content Include="Content\images\main-book.png" />
-    <Content Include="Content\images\react-logo.png" />
-    <Content Include="Content\img\indy-canal-day.jpg" />
-    <Content Include="Content\img\indy-circle-night-2.jpg" />
-    <Content Include="Content\img\indy-circle-night.jpg" />
-    <Content Include="Content\img\indy-night-canal.jpg" />
-    <Content Include="Content\img\indy-oil-flag.jpg" />
-    <Content Include="Content\img\indy-orange.jpg" />
-    <Content Include="Content\tether\tether-theme-arrows-dark.css" />
-    <Content Include="Content\tether\tether-theme-arrows-dark.min.css" />
-    <Content Include="Content\tether\tether-theme-arrows.css" />
-    <Content Include="Content\tether\tether-theme-arrows.min.css" />
-    <Content Include="Content\tether\tether-theme-basic.css" />
-    <Content Include="Content\tether\tether-theme-basic.min.css" />
-    <Content Include="Content\tether\tether.css" />
-    <Content Include="Content\tether\tether.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\old-css\site.css" />
     <Content Include="Scripts\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css" />
     <Content Include="Scripts\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css" />
     <Content Include="Scripts\adminlte\components\bootstrap-colorpicker\dist\img\bootstrap-colorpicker\alpha-horizontal.png" />
@@ -4278,8 +4220,6 @@
     <Content Include="Scripts\adminlte\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="Scripts\adminlte\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Scripts\adminlte\plugins\timepicker\bootstrap-timepicker.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\checkout.js" />
     <Content Include="Scripts\CodeMirror\addon\comment\comment.js" />
     <Content Include="Scripts\CodeMirror\addon\comment\continuecomment.js" />
     <Content Include="Scripts\CodeMirror\addon\dialog\dialog.css" />
@@ -4686,14 +4626,6 @@
     <Content Include="Scripts\CodeMirror\theme\xq-light.css" />
     <Content Include="Scripts\CodeMirror\theme\yeti.css" />
     <Content Include="Scripts\CodeMirror\theme\zenburn.css" />
-    <Content Include="Scripts\comment-form.js" />
-    <Content Include="Scripts\cs101-simulation.js" />
-    <Content Include="Scripts\cs101-table.js" />
-    <Content Include="Scripts\cs101.js" />
-    <Content Include="Scripts\.js" />
-    <Content Include="Scripts\icheck.min.js" />
-    <Content Include="Scripts\jquery.payment.js" />
-    <Content Include="Scripts\js\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -4702,17 +4634,21 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\old-css\Bundle.scss" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="Content\old-css\_nav.scss" />
+    <Content Include="Content\adminlte\css\adminlte.css.map" />
+    <Content Include="Content\adminlte\css\adminlte.min.css.map" />
     <None Include="Properties\PublishProfiles\codeoath - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\CodeOath - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\codeoath - Web Deploy1.pubxml" />
     <None Include="Properties\PublishProfiles\codeoath - Web Deploy2.pubxml" />
     <None Include="Properties\PublishProfiles\codeoath - Web Deploy3.pubxml" />
+    <None Include="Properties\PublishProfiles\codeoath - Web Deploy4.pubxml" />
+    <None Include="Properties\PublishProfiles\codeoath - Web Deploy5.pubxml" />
+    <None Include="Properties\PublishProfiles\codeoath - Web Deploy6.pubxml" />
+    <None Include="Properties\PublishProfiles\codeoath - Web Deploy7.pubxml" />
     <None Include="Properties\PublishProfiles\SiliconIndyWebMvc20180902102312 - Web Deploy.pubxml" />
     <Content Include="Scripts\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css.map" />
     <Content Include="Scripts\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css.map" />
@@ -4751,21 +4687,9 @@
     <Content Include="Scripts\adminlte\components\jquery\dist\jquery.slim.min.map" />
     <Content Include="Scripts\adminlte\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="Scripts\adminlte\plugins\input-mask\phone-codes\phone-codes.json" />
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\payment-validations.js" />
-    <Content Include="Scripts\tether.js" />
-    <Content Include="Scripts\tether.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -4843,8 +4767,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SiliconIndy.Contracts\SiliconIndy.Contracts.csproj">
@@ -4882,7 +4804,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58124</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:58124/</IISUrl>
+          <IISUrl>https://localhost:44372/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
