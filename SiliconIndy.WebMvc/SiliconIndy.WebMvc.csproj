@@ -388,29 +388,25 @@
     <Content Include="Content\adminlte\img\user6-128x128.jpg" />
     <Content Include="Content\adminlte\img\user7-128x128.jpg" />
     <Content Include="Content\adminlte\img\user8-128x128.jpg" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\codemirror.css" />
-    <Content Include="Content\codemirrorcsharp.css" />
-    <Content Include="Content\css\blue.css" />
-    <Content Include="Content\css\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\css\Bundle.css">
+    <Content Include="Content\adminlte\css\codemirror.css" />
+    <Content Include="Content\adminlte\css\codemirrorcsharp.css" />
+    <Content Include="Content\old-css\blue.css" />
+    <Content Include="Content\old-css\bootstrap.css" />
+    <Content Include="Content\old-css\Bundle.css">
       <DependentUpon>Bundle.scss</DependentUpon>
     </Content>
-    <Content Include="Content\css\Bundle.min.css">
+    <Content Include="Content\old-css\Bundle.min.css">
       <DependentUpon>Bundle.css</DependentUpon>
     </Content>
-    <Content Include="Content\css\styles.css" />
-    <Content Include="Content\css\PagedList.css" />
-    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\old-css\styles.css" />
+    <Content Include="Content\old-css\PagedList.css" />
+    <Content Include="Content\old-css\font-awesome.css" />
     <Content Include="Content\adminlte\css\adminlte.css.map" />
     <Content Include="Content\adminlte\css\adminlte.min.css.map" />
     <Content Include="admin-lte\css\adminlte.min.css.map" />
     <Content Include="admin-lte\css\adminlte.css.map" />
-    <None Include="Content\css\_globals.scss" />
-    <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\1.png" />
+    <None Include="Content\old-css\_globals.scss" />
+    <Content Include="Content\adminlte\css\font-awesome.min.css" />
     <Content Include="Content\images\creditcards\amex.png" />
     <Content Include="Content\images\creditcards\credit.png" />
     <Content Include="Content\images\creditcards\dankort.png" />
@@ -437,12 +433,6 @@
     <Content Include="Content\img\indy-night-canal.jpg" />
     <Content Include="Content\img\indy-oil-flag.jpg" />
     <Content Include="Content\img\indy-orange.jpg" />
-    <Content Include="Content\2.png" />
-    <Content Include="Content\ionicons.min.css" />
-    <Content Include="Content\javascript-logo.png" />
-    <Content Include="Content\main-book.png" />
-    <Content Include="Content\3.png" />
-    <Content Include="Content\PagedList.css" />
     <Content Include="Content\tether\tether-theme-arrows-dark.css" />
     <Content Include="Content\tether\tether-theme-arrows-dark.min.css" />
     <Content Include="Content\tether\tether-theme-arrows.css" />
@@ -451,12 +441,11 @@
     <Content Include="Content\tether\tether-theme-basic.min.css" />
     <Content Include="Content\tether\tether.css" />
     <Content Include="Content\tether\tether.min.css" />
-    <Content Include="Content\Todos\TextFile1.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\css\site.css" />
+    <Content Include="Content\old-css\site.css" />
     <Content Include="Scripts\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css" />
     <Content Include="Scripts\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css" />
     <Content Include="Scripts\adminlte\components\bootstrap-colorpicker\dist\img\bootstrap-colorpicker\alpha-horizontal.png" />
@@ -4713,12 +4702,12 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\css\Bundle.scss" />
+    <Content Include="Content\old-css\Bundle.scss" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="Content\css\_nav.scss" />
+    <Content Include="Content\old-css\_nav.scss" />
     <None Include="Properties\PublishProfiles\codeoath - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\CodeOath - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\codeoath - Web Deploy1.pubxml" />
@@ -4853,10 +4842,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
