@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*!
   Ionicons, v2.0.0
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -1210,6 +1210,11 @@
 .ion-radio-waves:before { content: "\f2ac"; }
 
 .ion-record:before { content: "\f21b"; }
+
+.ion-react:before {
+    content: "\f21e";
+}
+
 
 .ion-refresh:before { content: "\f21c"; }
 

@@ -1,4 +1,12 @@
-﻿<div class="content-wrapper">
+﻿@model IEnumerable<SiliconIndy.Models.LessonModels.LessonListItem>
+
+@{
+    ViewBag.Title = "MiniLessonChoices";
+}
+
+<h2>MiniLessonChoices</h2>
+
+<div class="content-wrapper">
     <section class="content-header">
         <h1>
             Mini-Lesson Choices
@@ -12,30 +20,18 @@
         </ol>
     </section>
     <section class="content">
+
+
         <div class="row">
-            <h1>.NET</h1>
+            <h1>Git and Github</h1>
 
             <div class="col-lg-6 col-xs-6">
-                <div class="small-box bg-aqua">
+                <div class="small-box bg-gray">
                     <div class="inner">
-                        <h3>C#</h3>
-                        <p>17 lessons</p> <!--TODO: Get number of lessons-->
+                        <h3>@Html.DisplayNameFor(model => model.HTML)</h3>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-xs-6">
-                <div class="small-box bg-aqua">
-                    <div class="inner">
-                        <h3>Web Api</h3> <!--TODO: Get number of lessons-->
-                        <p>3 Lessons</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
+                        <i class="ion ion-social-github"></i>
                     </div>
                     <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
@@ -43,8 +39,22 @@
         </div>
 
         <div class="row">
+            <h1>HTML 5</h1>
 
+            <div class="col-lg-6 col-xs-6">
+                <div class="small-box bg-gray">
+                    <div class="inner">
+                        <h3>@Html.DisplayNameFor(model => model.HTML)</h3>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-social-html5"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
 
+        <div class="row">
             <h1>JavaScript</h1>
 
             <div class="col-lg-6 col-xs-6">
@@ -54,13 +64,14 @@
                         <p>3 Lessons</p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
+                        <i class="ion ion-social-javascript"></i>
                     </div>
                     <a href="#" class="small-box-footer">More info <i class="fa fa-jsfiddle"></i></a>
                 </div>
             </div>
-
-
+        </div>
+        <div class="row">
+            <h1>JavaScript</h1>
             <div class="col-lg-6 col-xs-6">
                 <div class="small-box bg-yellow">
                     <div class="inner">
@@ -68,36 +79,11 @@
                         <p>4 lessons</p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
+                        <img src="~/Scripts/adminlte/components/Ionicons/png/512/react-brands.svg" />
 
+                        <i class="ion ion-record">
 
-            <div class="col-lg-6 col-xs-6">
-                <div class="small-box bg-yellow">
-                    <div class="inner">
-                        <h3>Angular</h3>
-                        <p>4 Lessons</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-
-
-
-            <div class="col-lg-6 col-xs-6">
-                <div class="small-box bg-yellow">
-                    <div class="inner">
-                        <h3>Vue</h3>
-                        <p>4 Lessons</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
+                        </i>
                     </div>
                     <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
@@ -105,54 +91,80 @@
 
         </div>
 
-        <div class="row">
-            <h1>Git</h1>
-
-            <div class="col-lg-6 col-xs-6">
-                <div class="small-box bg-aqua">
-                    <div class="inner">
-                        <h3>Local</h3> <!--TODO: Get number of lessons-->
-                        <p>4 lessons</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-
-
-            <div class="col-lg-6 col-xs-6">
-                <div class="small-box bg-aqua">
-                    <div class="inner">
-                        <h3>Remote</h3> <!--TODO: Get number of lessons-->
-                        <p>3 Lessons</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-
-
-            <div class="col-lg-6 col-xs-6">
-                <div class="small-box bg-aqua">
-                    <div class="inner">
-                        <h3>Partner</h3> <!--TODO: Get number of lessons-->
-                        <p>3 Lessons</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-
-
-        </div>
 
 
     </section>
 </div>
 
+
+
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LessonId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommentCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JavaScript)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CSharp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HTML)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedUtc)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LessonId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CommentCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JavaScript)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CSharp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HTML)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedUtc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>*@

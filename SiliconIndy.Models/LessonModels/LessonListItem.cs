@@ -18,6 +18,8 @@ namespace SiliconIndy.Models.LessonModels
         public bool CSharp { get; set; }
         public bool HTML { get; set; }
 
+        public LessonDetail LessonDetails { get; set; }
+
         public DateTimeOffset CreatedUtc { get; set; }
     }
 }

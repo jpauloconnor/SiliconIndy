@@ -307,6 +307,7 @@
     <Content Include="admin-lte\img\credit\paypal2.png" />
     <Content Include="admin-lte\img\credit\visa.png" />
     <Content Include="admin-lte\img\default-50x50.gif" />
+    <Content Include="admin-lte\img\github-brands.svg" />
     <Content Include="admin-lte\img\icons.png" />
     <Content Include="admin-lte\img\photo1.png" />
     <Content Include="admin-lte\img\photo2.png" />
@@ -314,7 +315,6 @@
     <Content Include="admin-lte\img\photo4.jpg" />
     <Content Include="admin-lte\img\user1-128x128.jpg" />
     <Content Include="admin-lte\img\user2-160x160.jpg" />
-    <Content Include="admin-lte\img\user3-128x128.jpg" />
     <Content Include="admin-lte\img\user4-128x128.jpg" />
     <Content Include="admin-lte\img\user5-128x128.jpg" />
     <Content Include="admin-lte\img\user6-128x128.jpg" />
@@ -3894,6 +3894,7 @@
     <Content Include="Scripts\adminlte\components\Ionicons\png\512\qr-scanner.png" />
     <Content Include="Scripts\adminlte\components\Ionicons\png\512\quote.png" />
     <Content Include="Scripts\adminlte\components\Ionicons\png\512\radio-waves.png" />
+    <Content Include="Scripts\adminlte\components\Ionicons\png\512\react-brands.svg" />
     <Content Include="Scripts\adminlte\components\Ionicons\png\512\record.png" />
     <Content Include="Scripts\adminlte\components\Ionicons\png\512\refresh.png" />
     <Content Include="Scripts\adminlte\components\Ionicons\png\512\reply-all.png" />
@@ -4751,12 +4752,12 @@
     <Content Include="Views\Results\Individual.cshtml" />
     <Content Include="Views\Results\AllUsers.cshtml" />
     <Content Include="Views\Chat\Index.cshtml" />
-    <Content Include="Views\Lesson\MiniLessonChoices.cshtml" />
     <Content Include="Views\Profile\PageProfile.cshtml" />
     <Content Include="Views\Documentation\Index.cshtml" />
     <Content Include="Views\Calendar\Index.cshtml" />
     <Content Include="Views\Feedback\Index.cshtml" />
     <Content Include="Views\Lesson\BusinessChallenges.cshtml" />
+    <Content Include="Views\Lesson\MiniLessonChoices.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

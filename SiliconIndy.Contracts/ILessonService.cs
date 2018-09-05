@@ -14,5 +14,9 @@ namespace SiliconIndy.Contracts
         LessonDetail GetLessonById(int lessonId);
         bool UpdateLesson(LessonEdit model);
         bool DeleteLesson(int lessonId);
+        IEnumerable<LessonListItem> GetAllHTMLLessons();
+        IEnumerable<LessonListItem> GetAllCSharpLessons();
+        IEnumerable<LessonListItem> GetAllJavaScriptLessons();
+
     }
 }

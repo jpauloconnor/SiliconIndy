@@ -30,6 +30,11 @@ namespace SiliconIndy.WebMvc.Controllers
         public ActionResult MiniLessonChoices()
         {
             var lessons = LessonService.GetLessons();
+
+            ViewBag.JSLessons = LessonService.GetAllJavaScriptLessons().Count();
+            ViewBag.CSharpLessons = LessonService.GetAllCSharpLessons().Count();
+            ViewBag.HTMLLessons = LessonService.GetAllCSharpLessons().Count();
+
             return View(lessons);
         }
 
@@ -81,7 +86,6 @@ namespace SiliconIndy.WebMvc.Controllers
 
             return View(model);
         }
-
 
         public ActionResult GetRandomLesson()
         {

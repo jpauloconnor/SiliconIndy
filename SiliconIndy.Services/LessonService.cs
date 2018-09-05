@@ -81,7 +81,7 @@ namespace SiliconIndy.Services
                                 Content = e.Content,
                                 JavaScript = e.JavaScript,
                                 HTML = e.HTML,
-                                CSharp = e.CSharp
+                                CSharp = e.CSharp,
                             });
 
                 var lessonList = lessons.ToList();
@@ -164,6 +164,73 @@ namespace SiliconIndy.Services
                 return context.SaveChanges() == 1;
             }
         }
+
+        public IEnumerable<LessonListItem> GetAllJavaScriptLessons()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Lessons
+                    .Where(e => e.JavaScript == true)
+                    .Select(
+                        e=> new LessonListItem()
+                    {
+                        CreatedUtc = e.CreatedUtc,
+                        Title = e.Title,
+                        Content = e.Content,
+                        JavaScript = true
+                    });
+
+                return entity.ToArray();
+            }
+        }
+
+
+        public IEnumerable<LessonListItem> GetAllCSharpLessons()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Lessons
+                    .Where(e => e.CSharp == true)
+                    .Select(
+                        e => new LessonListItem()
+                        {
+                            CSharp = true,
+                            CreatedUtc = e.CreatedUtc,
+                            Title = e.Title,
+                            Content = e.Content,
+                        });
+
+                return entity.ToArray();
+            }
+        }
+
+
+        public IEnumerable<LessonListItem> GetAllHTMLLessons()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                //Get the number of lessons by the type....
+                var entity =
+                    ctx
+                    .Lessons
+                    .Where(e => e.HTML == true)
+                    .Select(
+                        e => new LessonListItem()
+                        {
+                            HTML = true,
+                            CreatedUtc = e.CreatedUtc,
+                            Title = e.Title,
+                            Content = e.Content
+                        });
+
+                return entity.ToArray();
+            }
+        }
+
 
         public bool UpdateLesson(LessonEdit model)
         {
