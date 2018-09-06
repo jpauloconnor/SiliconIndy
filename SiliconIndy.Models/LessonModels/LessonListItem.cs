@@ -14,8 +14,9 @@ namespace SiliconIndy.Models.LessonModels
         public string Title { get; set; }
         public string Content { get; set; }
         public int CommentCount { get; set; }
-        public bool JavaScript { get; set; }
+        public bool Git { get; set; }
         public bool CSharp { get; set; }
+        public bool JavaScript { get; set; }
         public bool HTML { get; set; }
 
         public LessonDetail LessonDetails { get; set; }

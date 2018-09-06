@@ -12,8 +12,9 @@ namespace SiliconIndy.Models.LessonModels
         public int LessonId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
-        public bool JavaScript { get; set; }
+        public bool Git { get; set; }
         public bool CSharp { get; set; }
+        public bool JavaScript { get; set; }
         public bool HTML { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }

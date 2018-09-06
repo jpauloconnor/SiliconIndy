@@ -23,6 +23,9 @@ namespace SiliconIndy.Data
         public string Content { get; set; }
 
         [Required]
+        public bool Git { get; set; }
+
+        [Required]
         public bool JavaScript { get; set; }
 
         [Required]

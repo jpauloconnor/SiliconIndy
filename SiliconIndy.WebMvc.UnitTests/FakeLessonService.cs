@@ -27,6 +27,26 @@ namespace SiliconIndy.WebMvc.UnitTests
             return ReturnValue;
         }
 
+        public IEnumerable<LessonListItem> GetAllCSharpLessons()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<LessonListItem> GetAllGitLessons()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<LessonListItem> GetAllHTMLLessons()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<LessonListItem> GetAllJavaScriptLessons()
+        {
+            throw new NotImplementedException();
+        }
+
         public LessonDetail GetLessonById(int lessonId)
         {
            if(lessonId != 1)
@@ -37,7 +57,7 @@ namespace SiliconIndy.WebMvc.UnitTests
             return new LessonDetail();
         }
 
-        public ICollection<LessonListItem> GetLessons()
+        public IEnumerable<LessonListItem> GetLessons()
         {
             throw new NotImplementedException();
         }

@@ -10,13 +10,13 @@ namespace SiliconIndy.Contracts
     public interface ILessonService
     {
         bool CreateLesson(LessonCreate model);
-        ICollection<LessonListItem> GetLessons();
+        IEnumerable<LessonListItem> GetLessons();
         LessonDetail GetLessonById(int lessonId);
         bool UpdateLesson(LessonEdit model);
         bool DeleteLesson(int lessonId);
         IEnumerable<LessonListItem> GetAllHTMLLessons();
         IEnumerable<LessonListItem> GetAllCSharpLessons();
         IEnumerable<LessonListItem> GetAllJavaScriptLessons();
-
+        IEnumerable<LessonListItem> GetAllGitLessons();
     }
 }

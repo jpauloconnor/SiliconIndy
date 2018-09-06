@@ -1,0 +1,84 @@
+﻿@model IEnumerable<SiliconIndy.Models.LessonModels.LessonListItem>
+
+@{
+    ViewBag.Title = "MiniLessonChoices";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            Mini-Lesson Choices
+            <small>Choose a topic</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li class="active">Lesson Choices</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i>Business Challenges</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i>Full Stack Work</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i>Book List</a></li>
+        </ol>
+    </section>
+
+
+    <section class="content">
+        <div class="row">
+            <div class="col-lg-6 col-xs-6">
+                <div class="small-box bg-gray">
+                    <div class="inner">
+                        <h3>@Html.DisplayNameFor(model => model.Git)</h3> 
+                        <h3>@ViewBag.GitLessons Lessons Available</h3>
+                        <h6>Github is a social media site for coders.</h6>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-social-github"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">@Html.ActionLink("Git Lessons", "Index", "Lesson", new { param = "git" }, null) <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-xs-6">
+                <div class="small-box bg-gray">
+                    <div class="inner">
+                        <h3>@Html.DisplayNameFor(model => model.HTML)</h3>
+                        <p>@ViewBag.HTMLLessons Lessons Available</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-social-html5"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-xs-6">
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3>@Html.DisplayNameFor(model => model.CSharp)</h3>
+                        <p>@ViewBag.CSharpLessons Lessons Available</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-xs-6">
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3>@Html.DisplayNameFor(model => model.JavaScript)</h3>
+                        <p>@ViewBag.JSLessons  Lessons Available</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -65,7 +65,6 @@
   <ItemGroup>
     <Compile Include="Lesson.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="LessonData.cs" />
     <Compile Include="LessonTypeModel.cs" />
     <Compile Include="Migrations\201808161110597_InitialCreate.cs" />
     <Compile Include="Migrations\201808161110597_InitialCreate.Designer.cs">
@@ -111,6 +110,14 @@
     <Compile Include="Migrations\201808312338326_commenttitle.Designer.cs">
       <DependentUpon>201808312338326_commenttitle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809060006386_gitlessonprop.cs" />
+    <Compile Include="Migrations\201809060006386_gitlessonprop.Designer.cs">
+      <DependentUpon>201809060006386_gitlessonprop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809060009138_deletelessondatatable.cs" />
+    <Compile Include="Migrations\201809060009138_deletelessondatatable.Designer.cs">
+      <DependentUpon>201809060009138_deletelessondatatable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,6 +162,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808312338326_commenttitle.resx">
       <DependentUpon>201808312338326_commenttitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809060006386_gitlessonprop.resx">
+      <DependentUpon>201809060006386_gitlessonprop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809060009138_deletelessondatatable.resx">
+      <DependentUpon>201809060009138_deletelessondatatable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

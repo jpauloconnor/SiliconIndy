@@ -4757,7 +4757,7 @@
     <Content Include="Views\Calendar\Index.cshtml" />
     <Content Include="Views\Feedback\Index.cshtml" />
     <Content Include="Views\Lesson\BusinessChallenges.cshtml" />
-    <Content Include="Views\Lesson\MiniLessonChoices.cshtml" />
+    <Content Include="Views\Lesson\MainIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

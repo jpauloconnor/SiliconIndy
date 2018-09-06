@@ -22,6 +22,7 @@ namespace SiliconIndy.Services
 
         public bool CreateLesson(LessonCreate model)
         {
+            bool Git = false;
             bool CSharp = false;
             bool JS = false;
             bool HTML = false;
@@ -30,17 +31,22 @@ namespace SiliconIndy.Services
             {
                 switch (item.LessonType)
                 {
+
+                    case LessonTypeModel.LessonType.Git:
+                        if (item.IsSelected)
+                            Git = true;
+                        break;
                     case LessonTypeModel.LessonType.CSharp:
                         if (item.IsSelected)
-                        CSharp = true;
+                            CSharp = true;
                         break;
                     case LessonTypeModel.LessonType.HTML:
                         if(item.IsSelected)
-                        HTML = true;
+                            HTML = true;
                         break;
                     case LessonTypeModel.LessonType.JavaScript:
                         if (item.IsSelected)
-                        JS = true;
+                            JS = true;
                         break;
                     default:
                         break;
@@ -52,6 +58,7 @@ namespace SiliconIndy.Services
                 {
                     Title = model.Title,
                     OwnerId = _ownerId,
+                    Git = Git,
                     CSharp = CSharp,
                     HTML = HTML,
                     JavaScript = JS,
@@ -66,7 +73,7 @@ namespace SiliconIndy.Services
             }
         }
 
-        public ICollection<LessonListItem> GetLessons()
+        public IEnumerable<LessonListItem> GetLessons()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -79,9 +86,10 @@ namespace SiliconIndy.Services
                                 LessonId = e.LessonId,
                                 Title = e.Title,
                                 Content = e.Content,
+                                Git = e.Git,
+                                CSharp = e.CSharp,
                                 JavaScript = e.JavaScript,
                                 HTML = e.HTML,
-                                CSharp = e.CSharp,
                             });
 
                 var lessonList = lessons.ToList();
@@ -93,7 +101,7 @@ namespace SiliconIndy.Services
                     lesson.CommentCount = commentService.GetCommentCountByLessonId(lesson.LessonId);
                 }
 
-                return lessonList;
+                return lessonList.ToArray();
             }
         }
 
@@ -111,6 +119,7 @@ namespace SiliconIndy.Services
                         LessonId = lesson.LessonId,
                         Title = lesson.Title,
                         Content = lesson.Content,
+                        Git = lesson.Git,
                         CSharp = lesson.CSharp,
                         JavaScript = lesson.JavaScript,
                         HTML = lesson.HTML,
@@ -121,6 +130,7 @@ namespace SiliconIndy.Services
 
         public bool GetLessonByType(LessonCreate model)
         {
+            bool Git = false;
             bool CSharp = false;
             bool JS = false;
             bool HTML = false;
@@ -129,6 +139,10 @@ namespace SiliconIndy.Services
             {
                 switch (item.LessonType)
                 {
+                    case LessonTypeModel.LessonType.Git:
+                        if (item.IsSelected)
+                            Git = true;
+                        break;
                     case LessonTypeModel.LessonType.CSharp:
                         if (item.IsSelected)
                             CSharp = true;
@@ -151,6 +165,7 @@ namespace SiliconIndy.Services
                 {
                     Title = model.Title,
                     OwnerId = _ownerId,
+                    Git = Git,
                     CSharp = CSharp,
                     HTML = HTML,
                     JavaScript = JS,
@@ -165,6 +180,27 @@ namespace SiliconIndy.Services
             }
         }
 
+
+        public IEnumerable<LessonListItem> GetAllGitLessons()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Lessons
+                    .Where(e => e.Git == true)
+                    .Select(
+                        e => new LessonListItem()
+                        {
+                            CreatedUtc = e.CreatedUtc,
+                            Title = e.Title,
+                            Content = e.Content,
+                            Git = true
+                        });
+
+                return entity.ToArray();
+            }
+        }
         public IEnumerable<LessonListItem> GetAllJavaScriptLessons()
         {
             using (var ctx = new ApplicationDbContext())
@@ -248,7 +284,7 @@ namespace SiliconIndy.Services
             var lessonList = GetLessons();
 
             Random randomLesson = new Random();
-            var lessonId = randomLesson.Next(lessonList.Count);
+            var lessonId = randomLesson.Next(lessonList.Count());
 
             var lesson = GetLessonById(lessonId);
 

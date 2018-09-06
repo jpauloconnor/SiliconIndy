@@ -11,6 +11,8 @@ namespace SiliconIndy.Data
     {
         public enum LessonType
         {
+            [Description("Git")]
+            Git = 0,
             [Description("JavaScript")]
             JavaScript = 1,
             [Description("C#")]
@@ -19,5 +21,4 @@ namespace SiliconIndy.Data
             HTML = 3
         }
     }
-   
 }

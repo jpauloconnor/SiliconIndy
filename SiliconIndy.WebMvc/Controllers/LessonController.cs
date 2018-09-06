@@ -27,24 +27,48 @@ namespace SiliconIndy.WebMvc.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult MiniLessonChoices()
+        public ActionResult MainIndex()
         {
             var lessons = LessonService.GetLessons();
 
-            ViewBag.JSLessons = LessonService.GetAllJavaScriptLessons().Count();
+            ViewBag.GitLessons = LessonService.GetAllGitLessons().Count();
             ViewBag.CSharpLessons = LessonService.GetAllCSharpLessons().Count();
+            ViewBag.JSLessons = LessonService.GetAllJavaScriptLessons().Count();
             ViewBag.HTMLLessons = LessonService.GetAllCSharpLessons().Count();
 
             return View(lessons);
         }
 
-
-        [AllowAnonymous]
-        public ActionResult Index()
+        public ActionResult Index(string param)
         {
-            var lessons = LessonService.GetLessons();
+            List<LessonListItem> lessons = new List<LessonListItem>();
+            lessons = LessonService.GetLessons().ToList();
+
+            ViewBag.NameSortParm = String.IsNullOrEmpty(param) ? "language_type" : "";
+
+            switch (param)
+            {
+                case "git":
+                    lessons = LessonService.GetAllGitLessons().ToList();
+                    break;
+                case "csharp":
+                    lessons = LessonService.GetAllCSharpLessons().ToList();
+                    break;
+                case "html":
+                    lessons = LessonService.GetAllHTMLLessons().ToList();
+                    break;
+                case "javascript":
+                    lessons = lessons.FindAll(x => x.JavaScript == true);
+                    break;
+                default:
+                    break;
+            }
             return View(lessons);
         }
+
+
+
+
 
         [Authorize(Roles = "Admin")]
         public ActionResult Create()
