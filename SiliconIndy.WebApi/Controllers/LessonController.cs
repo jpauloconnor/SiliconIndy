@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using SiliconIndy.Models.LessonModels;
 using SiliconIndy.Services;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,11 @@ using System.Web.Http;
 
 namespace SiliconIndy.WebApi.Controllers
 {
+    [Authorize]
     public class LessonController : ApiController
     {
         // GET /api/lessons
-        public IHttpActionResult Get()
+        public IHttpActionResult GetAll()
         {
             var lessonService = CreateLessonService();
 
@@ -21,20 +23,27 @@ namespace SiliconIndy.WebApi.Controllers
             return Ok(lessons);
         }
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
+
+        public IHttpActionResult Get(int id)
         {
+            return Ok();
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public IHttpActionResult Post(LessonCreate note)
         {
+            return Ok();
         }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
+        public IHttpActionResult Put(LessonEdit note)
         {
+            return Ok();
         }
+
+        public IHttpActionResult Delete(int id)
+        {
+            return Ok();
+        }
+        
         private LessonService CreateLessonService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

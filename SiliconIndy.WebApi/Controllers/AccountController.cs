@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using SiliconIndy.Data;
 using SiliconIndy.WebApi.Models;
 using SiliconIndy.WebApi.Providers;
 using SiliconIndy.WebApi.Results;

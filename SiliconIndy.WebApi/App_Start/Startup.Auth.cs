@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using SiliconIndy.WebApi.Providers;
 using SiliconIndy.WebApi.Models;
+using SiliconIndy.Data;
 
 namespace SiliconIndy.WebApi
 {
