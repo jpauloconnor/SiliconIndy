@@ -4650,6 +4650,7 @@
     <None Include="Properties\PublishProfiles\codeoath - Web Deploy5.pubxml" />
     <None Include="Properties\PublishProfiles\codeoath - Web Deploy6.pubxml" />
     <None Include="Properties\PublishProfiles\codeoath - Web Deploy7.pubxml" />
+    <None Include="Properties\PublishProfiles\codeoath - Web Deploy8.pubxml" />
     <None Include="Properties\PublishProfiles\SiliconIndyWebMvc20180902102312 - Web Deploy.pubxml" />
     <Content Include="Scripts\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css.map" />
     <Content Include="Scripts\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css.map" />
